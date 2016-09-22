@@ -1,0 +1,13 @@
+{
+  "name": "top_that_ionic",
+  "app_id": "",
+  "gulpStartupTasks": [
+    "index",
+    "watch",
+    "sass"
+  ],
+  "watchPatterns": [
+    "www/**/*",
+    "!www/lib/**/*"
+  ]
+}
