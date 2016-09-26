@@ -22,39 +22,60 @@
       });
     })
 
-    .config(function($stateProvider, $urlRouterProvider) {
+    .config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
+
+      $ionicConfigProvider.tabs.position('top'); //bottom
 
       $stateProvider
 
         .state('app', {
-          url: '/app',
+          url: "/app",
           abstract: true,
           templateUrl: 'app/layout/side-menu.html'
         })
 
+        // .state('app.auth', {
+        //   url: "/auth",
+        //   abstract: true,
+        //   template: '<ion-view/>'
+        //})
+
         .state('app.home', {
           url: "/home",
-          templateUrl: "app/home/home.html",
-          controller: "HomeController"
+          abstract: true,
+          templateUrl: "app/home/tabs.html"
+        })
+
+        .state('app.home.main', {
+          url: '/main',
+            views: {
+              'main-tab': {
+                templateUrl: 'app/home/partials/home.feed.html',
+                controller: 'HomeController'
+              }
+            }
+        })
+
+        .state('app.home.trends', {
+          url: '/trends',
+          views: {
+            'trends-tab': {
+              templateUrl: 'app/home/partials/home.trends.html',
+              controller: 'HomeController'
+            }
+          }
+        })
+
+        .state('app.home.new', {
+          url: '/new',
+          views: {
+            'new-tab': {
+              templateUrl: 'app/home/partials/home.new.html',
+              controller: 'HomeController'
+            }
+          }
         });
 
-        // .state('app.search', {
-        //   url: '/search',
-        //   views: {
-        //     'menuContent': {
-        //       templateUrl: 'templates/search.html'
-        //     }
-        //   }
-        // })
-        //
-        // .state('app.browse', {
-        //   url: '/browse',
-        //   views: {
-        //     'menuContent': {
-        //       templateUrl: 'templates/browse.html'
-        //     }
-        //   }
-        // })
         // .state('app.playlists', {
         //   url: '/playlists',
         //   views: {
@@ -75,7 +96,7 @@
         //   }
         // });
       // if none of the above states are matched, use this as the fallback
-      $urlRouterProvider.otherwise('/app/home');
+      $urlRouterProvider.otherwise('/app/home/main');
     });
 
 })();
