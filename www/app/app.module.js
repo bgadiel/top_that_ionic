@@ -50,7 +50,7 @@
           url: '/main',
             views: {
               'main-tab': {
-                templateUrl: 'app/home/partials/home.feed.html',
+                templateUrl: 'app/home/home.main/home.main.html',
                 controller: 'HomeController'
               }
             }
@@ -60,7 +60,7 @@
           url: '/trends',
           views: {
             'trends-tab': {
-              templateUrl: 'app/home/partials/home.trends.html',
+              templateUrl: 'app/home/home.trends/home.trends.html',
               controller: 'HomeController'
             }
           }
@@ -70,31 +70,12 @@
           url: '/new',
           views: {
             'new-tab': {
-              templateUrl: 'app/home/partials/home.new.html',
+              templateUrl: 'app/home/home.new/home.new.html',
               controller: 'HomeController'
             }
           }
         });
 
-        // .state('app.playlists', {
-        //   url: '/playlists',
-        //   views: {
-        //     'menuContent': {
-        //       templateUrl: 'templates/playlists.html',
-        //       controller: 'PlaylistsCtrl'
-        //     }
-        //   }
-        // })
-        //
-        // .state('app.single', {
-        //   url: '/playlists/:playlistId',
-        //   views: {
-        //     'menuContent': {
-        //       templateUrl: 'templates/playlist.html',
-        //       controller: 'PlaylistCtrl'
-        //     }
-        //   }
-        // });
       // if none of the above states are matched, use this as the fallback
       $urlRouterProvider.otherwise('/app/home/main');
     });

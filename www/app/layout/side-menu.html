@@ -1,6 +1,6 @@
 <ion-side-menus enable-menu-with-back-views="false">
   <ion-side-menu-content>
-    <ion-nav-bar class="bar-stable">
+    <ion-nav-bar class="bar-dark">
       <ion-nav-back-button class="button-icon ion-arrow-left-c">
       </ion-nav-back-button>
       <ion-nav-buttons side="left">
@@ -8,7 +8,7 @@
         </button>
       </ion-nav-buttons>
     </ion-nav-bar>
-    <ion-nav-view animation="slide-left-right"></ion-nav-view>
+    <ion-nav-view></ion-nav-view>
   </ion-side-menu-content>
 
   <!-- TEMPORARY: expose-aside-when="(max-width:670px)" -->
@@ -17,7 +17,7 @@
       <div class="row menu-top-options">
         <div class="col col-top">
           <ion-list>
-            <ion-item class="heading-item" menu-close ui-sref="app.home">
+            <ion-item class="heading-item" menu-close ui-sref="app.home.main">
               <div class="row">
                 <div class="col">
                   <!-- We need a wrapper with width set for the preload image directive -->
@@ -35,15 +35,15 @@
                 </div>
               </div>
             </ion-item>
-            <ion-item ui-sref-active="active" class="item-icon-left" menu-close ui-sref="app.home">
+            <ion-item ui-sref-active="active" class="item-icon-left" menu-close ui-sref="app.home.main">
               <i class="menu-icon icon ion-home"></i>
               <h2 class="menu-text">Home</h2>
             </ion-item>
-            <ion-item ui-sref-active="active" class="item-icon-left" menu-close ui-sref="app.home">
+            <ion-item ui-sref-active="active" class="item-icon-left" menu-close ui-sref="app.home.main">
               <i class="menu-icon icon ion-person-stalker"></i>
               <h2 class="menu-text">Friends</h2>
             </ion-item>
-            <ion-item ui-sref-active="active" class="item-icon-left" menu-close ui-sref="app.home">
+            <ion-item ui-sref-active="active" class="item-icon-left" menu-close ui-sref="app.home.main">
               <i class="menu-icon icon ion-ribbon-b"></i>
               <h2 class="menu-text">Prices</h2>
             </ion-item>
@@ -53,11 +53,11 @@
       <div class="row menu-bottom-options">
         <div class="col col-bottom">
           <ion-list>
-            <ion-item ui-sref-active="active" class="item-icon-left" menu-close ui-sref="app.home">
+            <ion-item ui-sref-active="active" class="item-icon-left" menu-close ui-sref="app.home.main">
               <i class="menu-icon icon ion-person-add"></i>
               <h2 class="menu-text">Find Friends</h2>
             </ion-item>
-            <ion-item ui-sref-active="active" class="item-icon-left" menu-close ui-sref="app.home">
+            <ion-item ui-sref-active="active" class="item-icon-left" menu-close ui-sref="app.home.main">
               <i class="menu-icon icon ion-ios-settings-strong"></i>
               <h2 class="menu-text">Settings</h2>
             </ion-item>
