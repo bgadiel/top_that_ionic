@@ -15,6 +15,17 @@ $royal:                           #886aea !default;
 $dark:                            #444 !default;
 */
 
+@import "utils/variables.scss";
+@import "utils/mixins.scss";
+@import "typography.scss";
+@import "side_menu.scss";
+
+*,
+*:after,
+*:before {
+  @include box-sizing(border-box !important);
+}
+
 // The path for our ionicons font files, relative to the built CSS in www/css
 $ionicons-font-path: "../lib/ionic/fonts" !default;
 

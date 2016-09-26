@@ -1,0 +1,50 @@
+ion-side-menu {
+
+	background-color: $dark !important;
+
+	.menu-bottom-options {
+		position: absolute;
+		bottom: 0;
+	}
+
+}
+
+ion-item {
+
+	background-color: none !important;
+	border: none !important;
+	border-bottom: 1px solid #444 !important;
+
+	&:last-child {
+		border: none !important;
+	}
+
+	&.item {
+		margin: 0 !important;
+		color: $base-color;
+	}
+
+	.item-content {
+		background-color: $dark !important;
+		font-family: 'arial' !important;
+	}
+
+	.icon {
+		color: $base-color !important;
+	}
+
+	&.heading-item {
+
+		.item-content {
+			padding: 0 !important;
+		}
+
+		img.user-image {
+			border-radius: 100px;
+			margin: 0 auto;
+			display: block;
+		}
+
+	}
+
+}
