@@ -1,7 +1,13 @@
 $stable: #f8f8f8 !default;
 $dark: #252222 !default;
 $base-background-color: #3d3b3b !default;
-$base-color: #eee !default;
+$base-color: #ddd !default;
 $font-family-sans-serif: 'open_sansregular', '-apple-system', "Helvetica Neue", "Roboto", "Segoe UI", sans-serif !default;
-$font-family-base: $font-family-sans-serif !default;
-$headings-font-family: 'open_sansbold', $font-family-base !default;
+
+$menu-bg: #473427;
+$menu-bg-gradient-1: hsl(0, 0%, 18%);
+$menu-bg-gradient-2: desaturate(lighten($menu-bg-gradient-1, 4%), 4%);
+$menu-bg-gradient-3: desaturate(lighten($menu-bg-gradient-1, 12%), 16%);
+$menu-bg-gradient-4: desaturate(lighten($menu-bg-gradient-1, 13%), 17%);
+$menu-bg-gradient-5: desaturate(lighten($menu-bg-gradient-1, 14%), 18%);
+$menu-bg-gradient-6: desaturate(lighten($menu-bg-gradient-1, 16%), 20%);

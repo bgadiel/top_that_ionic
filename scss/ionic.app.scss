@@ -18,12 +18,17 @@ $dark:                            #444 !default;
 @import "utils/variables.scss";
 @import "utils/mixins.scss";
 @import "typography.scss";
+@import "tabs.scss";
 @import "side_menu.scss";
 
 *,
 *:after,
 *:before {
   @include box-sizing(border-box !important);
+}
+
+body {
+	color: $base_color;
 }
 
 // The path for our ionicons font files, relative to the built CSS in www/css

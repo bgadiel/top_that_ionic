@@ -11,58 +11,42 @@
     <ion-nav-view></ion-nav-view>
   </ion-side-menu-content>
 
-  <!-- TEMPORARY: expose-aside-when="(max-width:670px)" -->
+  <!-- JOÃO: expose-aside-when="(max-width:670px)" -->
   <ion-side-menu side="left">
     <ion-content has-bouncing="false" scroll="false" class="menu-outer">
-      <div class="row menu-top-options">
-        <div class="col col-top">
-          <ion-list>
-            <ion-item class="heading-item" menu-close ui-sref="app.home.main">
-              <div class="row">
-                <div class="col">
-                  <!-- We need a wrapper with width set for the preload image directive -->
-                  <div class="user-image-outer">
-                    <div helper-class="rounded-image">
-                      <img class="user-image" ng-src="/img/face-8.jpg">
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col">
-                  <h1 class="greeting">Joao</h1>
-                  <p class="message">@Joao</p>
-                </div>
-              </div>
-            </ion-item>
-            <ion-item ui-sref-active="active" class="item-icon-left" menu-close ui-sref="app.home.main">
-              <i class="menu-icon icon ion-home"></i>
-              <h2 class="menu-text">Home</h2>
-            </ion-item>
-            <ion-item ui-sref-active="active" class="item-icon-left" menu-close ui-sref="app.home.main">
-              <i class="menu-icon icon ion-person-stalker"></i>
-              <h2 class="menu-text">Friends</h2>
-            </ion-item>
-            <ion-item ui-sref-active="active" class="item-icon-left" menu-close ui-sref="app.home.main">
-              <i class="menu-icon icon ion-ribbon-b"></i>
-              <h2 class="menu-text">Prices</h2>
-            </ion-item>
-          </ion-list>
-        </div>
+      <div class="menu-top-options">
+        <ion-list>
+          <ion-item class="heading-item" menu-close ui-sref="app.home.main">
+            <!-- We need a wrapper with width set for the preload image directive -->
+            <img class="user-image" ng-src="img/face-8.jpg">
+            <h1 class="greeting">João</h1>
+            <p class="message">@joaomnb</p>
+          </ion-item>
+          <ion-item ui-sref-active="active" class="item-icon-left" menu-close ui-sref="app.home.main">
+            <i class="menu-icon icon ion-home"></i>
+            <h2 class="menu-text">Home</h2>
+          </ion-item>
+          <ion-item ui-sref-active="active" class="item-icon-left" menu-close ui-sref="app.home.main">
+            <i class="menu-icon icon ion-person-stalker"></i>
+            <h2 class="menu-text">Friends</h2>
+          </ion-item>
+          <ion-item ui-sref-active="active" class="item-icon-left" menu-close ui-sref="app.home.main">
+            <i class="menu-icon icon ion-ribbon-b"></i>
+            <h2 class="menu-text">Prices</h2>
+          </ion-item>
+        </ion-list>
       </div>
-      <div class="row menu-bottom-options">
-        <div class="col col-bottom">
-          <ion-list>
-            <ion-item ui-sref-active="active" class="item-icon-left" menu-close ui-sref="app.home.main">
-              <i class="menu-icon icon ion-person-add"></i>
-              <h2 class="menu-text">Find Friends</h2>
-            </ion-item>
-            <ion-item ui-sref-active="active" class="item-icon-left" menu-close ui-sref="app.home.main">
-              <i class="menu-icon icon ion-ios-settings-strong"></i>
-              <h2 class="menu-text">Settings</h2>
-            </ion-item>
-          </ion-list>
-        </div>
+      <div class="menu-bottom-options">
+        <ion-list>
+          <ion-item ui-sref-active="active" class="item-icon-left" menu-close ui-sref="app.home.main">
+            <i class="menu-icon icon ion-person-add"></i>
+            <h2 class="menu-text">Find Friends</h2>
+          </ion-item>
+          <ion-item ui-sref-active="active" class="item-icon-left" menu-close ui-sref="app.home.main">
+            <i class="menu-icon icon ion-ios-settings-strong"></i>
+            <h2 class="menu-text">Settings</h2>
+          </ion-item>
+        </ion-list>
       </div>
     </ion-content>
   </ion-side-menu>

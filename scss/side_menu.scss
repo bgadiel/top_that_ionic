@@ -1,50 +1,90 @@
-ion-side-menu {
+ion-side-menu.menu {
 
-	background-color: $dark !important;
+	background-color: rgba($menu-bg, 0.9);
+	background-image: -moz-linear-gradient(left top, rgba($menu-bg-gradient-1, 0.99) 0%, rgba($menu-bg-gradient-2, 0.99) 19%, rgba($menu-bg-gradient-3, 0.9) 46%, rgba($menu-bg-gradient-4, 0.91) 53%, rgba($menu-bg-gradient-5, 0.95) 86%, rgba($menu-bg-gradient-6, 0.95) 100%);
+	background-image: -webkit-linear-gradient(left top, rgba($menu-bg-gradient-1, 0.99) 0%, rgba($menu-bg-gradient-2, 0.99) 19%, rgba($menu-bg-gradient-3, 0.9) 46%, rgba($menu-bg-gradient-4, 0.91) 53%, rgba($menu-bg-gradient-5, 0.95) 86%, rgba($menu-bg-gradient-6, 0.95) 100%);
+	background-image: linear-gradient(to right bottom, rgba($menu-bg-gradient-1, 0.99) 0%, rgba($menu-bg-gradient-2, 0.99) 19%, rgba($menu-bg-gradient-3, 0.9) 46%, rgba($menu-bg-gradient-4, 0.91) 53%, rgba($menu-bg-gradient-5, 0.95) 86%, rgba($menu-bg-gradient-6, 0.95) 100%);
 
 	.menu-bottom-options {
 		position: absolute;
 		bottom: 0;
+		left: 0;
+		right: 0;
+	}
+
+	ion-list {
+
+		display: block;
+		background: none;
+
+		ion-item.item {
+
+			background: none;
+			border-color: #777;
+
+			h1 {
+				font-size: 28px;
+			}
+
+			p {
+				color: #aaa;
+			}
+
+			a.item-content,
+			&.active a.item-content {
+				background: none;
+			}
+
+			&.heading-item {
+
+				border-top: none;
+
+				a.item-content {
+
+					padding: 20px 0;
+					text-align: center;
+
+					h1 {
+						margin-bottom: 5px;
+					}
+
+					img.user-image {
+						border-radius: 100px;
+						margin: 0 auto;
+						display: block;
+					}
+
+				}
+
+			}
+
+			a.item-content .menu-icon.icon {
+				color: $base-color;
+				font-size: 24px;
+			}
+
+		}
+
 	}
 
 }
 
-ion-item {
+// ion-item {
 
-	background-color: none !important;
-	border: none !important;
-	border-bottom: 1px solid #444 !important;
+// 	background-color: none !important;
+// 	border: none !important;
+// 	border-bottom: 1px solid #444 !important;
 
-	&:last-child {
-		border: none !important;
-	}
+// 	&:last-child {
+// 		border: none !important;
+// 	}
 
-	&.item {
-		margin: 0 !important;
-		color: $base-color;
-	}
+// 	.item-content {
+// 		font-family: 'open_sansregular' !important;
+// 	}
 
-	.item-content {
-		background-color: $dark !important;
-		font-family: 'arial' !important;
-	}
+// 	.icon {
+// 		color: $base-color !important;
+// 	}
 
-	.icon {
-		color: $base-color !important;
-	}
-
-	&.heading-item {
-
-		.item-content {
-			padding: 0 !important;
-		}
-
-		img.user-image {
-			border-radius: 100px;
-			margin: 0 auto;
-			display: block;
-		}
-
-	}
-
-}
+// }

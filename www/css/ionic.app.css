@@ -17,32 +17,66 @@ $dark:                            #444 !default;
 */
 @import url(../fonts/opensans_regular_macroman/stylesheet.css);
 @import url(../fonts/opensans_bold_macroman/stylesheet.css);
-ion-side-menu  {
-  background-color: #252222 !important; }
-  ion-side-menu  .menu-bottom-options {
+ion-tabs .tab-nav.tabs {
+  height: 34px; }
+  ion-tabs .tab-nav.tabs::after {
+    content: '';
     position: absolute;
-    bottom: 0; }
+    height: 5px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #252222;
+    background-image: -moz-linear-gradient(left, #bd03ae 0%, #e4a101 33%, #08b8ba 66%, #10bc45 100%);
+    background-image: -webkit-linear-gradient(left, #bd03ae 0%, #e4a101 33%, #08b8ba 66%, #10bc45 100%);
+    background-image: linear-gradient(to right, #bd03ae 0%, #e4a101 33%, #08b8ba 66%, #10bc45 100%); }
+  ion-tabs .tab-nav.tabs .tab-item {
+    font-size: 14px;
+    text-transform: uppercase;
+    padding-top: 5px; }
 
-ion-item {
-  background-color: none !important;
-  border: none !important;
-  border-bottom: 1px solid #444 !important; }
-  ion-item:last-child  {
-    border: none !important; }
-  ion-item.item {
-    margin: 0 !important;
-    color: #eee; }
-  ion-item .item-content  {
-    background-color: #252222 !important;
-    font-family: 'arial' !important; }
-  ion-item .icon {
-    color: #eee !important; }
-  ion-item.heading-item .item-content {
-    padding: 0 !important; }
-  ion-item.heading-item img.user-image {
-    border-radius: 100px;
-    margin: 0 auto;
-    display: block; }
+ion-tabs ion-nav-view.tab-content ion-view ion-content {
+  color: #ddd;
+  top: 75px;
+  padding: 10px; }
+
+ion-side-menu.menu  {
+  background-color: rgba(71, 52, 39, 0.9);
+  background-image: -moz-linear-gradient(left top, rgba(46, 46, 46, 0.99) 0%, rgba(56, 56, 56, 0.99) 19%, rgba(77, 77, 77, 0.9) 46%, rgba(79, 79, 79, 0.91) 53%, rgba(82, 82, 82, 0.95) 86%, rgba(87, 87, 87, 0.95) 100%);
+  background-image: -webkit-linear-gradient(left top, rgba(46, 46, 46, 0.99) 0%, rgba(56, 56, 56, 0.99) 19%, rgba(77, 77, 77, 0.9) 46%, rgba(79, 79, 79, 0.91) 53%, rgba(82, 82, 82, 0.95) 86%, rgba(87, 87, 87, 0.95) 100%);
+  background-image: linear-gradient(to right bottom, rgba(46, 46, 46, 0.99) 0%, rgba(56, 56, 56, 0.99) 19%, rgba(77, 77, 77, 0.9) 46%, rgba(79, 79, 79, 0.91) 53%, rgba(82, 82, 82, 0.95) 86%, rgba(87, 87, 87, 0.95) 100%); }
+  ion-side-menu.menu  .menu-bottom-options {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0; }
+  ion-side-menu.menu  ion-list {
+    display: block;
+    background: none; }
+    ion-side-menu.menu  ion-list ion-item.item {
+      background: none;
+      border-color: #777; }
+      ion-side-menu.menu  ion-list ion-item.item h1 {
+        font-size: 28px; }
+      ion-side-menu.menu  ion-list ion-item.item p {
+        color: #aaa; }
+      ion-side-menu.menu  ion-list ion-item.item a.item-content,
+      ion-side-menu.menu  ion-list ion-item.item.active a.item-content {
+        background: none; }
+      ion-side-menu.menu  ion-list ion-item.item.heading-item {
+        border-top: none; }
+        ion-side-menu.menu  ion-list ion-item.item.heading-item a.item-content {
+          padding: 20px 0;
+          text-align: center; }
+          ion-side-menu.menu  ion-list ion-item.item.heading-item a.item-content h1 {
+            margin-bottom: 5px; }
+          ion-side-menu.menu  ion-list ion-item.item.heading-item a.item-content img.user-image {
+            border-radius: 100px;
+            margin: 0 auto;
+            display: block; }
+      ion-side-menu.menu  ion-list ion-item.item a.item-content .menu-icon.icon  {
+        color: #ddd;
+        font-size: 24px; }
 
 *,
 *:after,
@@ -50,6 +84,9 @@ ion-item {
   -webkit-box-sizing: border-box !important;
   -moz-box-sizing: border-box !important;
   box-sizing: border-box !important; }
+
+body {
+  color: #ddd; }
 
 /*!
   Ionicons, v2.0.1
@@ -3371,7 +3408,7 @@ body,
   overflow: hidden;
   margin: 0;
   padding: 0;
-  color: #eee;
+  color: #ddd;
   word-wrap: break-word;
   font-size: 14px;
   font-family: -apple-system;
@@ -3629,9 +3666,9 @@ cite {
 
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
-  color: #eee;
+  color: #ddd;
   font-weight: 500;
-  font-family: "open_sansbold", "open_sansregular", "-apple-system", "Helvetica Neue", "Roboto", "Segoe UI", sans-serif;
+  font-family: "open_sansregular", "-apple-system", "Helvetica Neue", "Roboto", "Segoe UI", sans-serif;
   line-height: 1.2; }
   h1 small, h2 small, h3 small, h4 small, h5 small, h6 small,
   .h1 small, .h2 small, .h3 small, .h4 small, .h5 small, .h6 small {
@@ -5310,7 +5347,7 @@ ion-tabs.tabs-striped.tabs-color-active-dark .tab-item.tab-item-active, ion-tabs
   min-height: 100%;
   max-height: 100%;
   width: 275px;
-  background-color: #fff; }
+  background-color: #473427; }
   .menu .scroll-content {
     z-index: 10; }
   .menu .bar-header {
