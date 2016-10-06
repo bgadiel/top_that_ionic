@@ -7,13 +7,14 @@ var minifyCss = require('gulp-minify-css');
 var rename = require('gulp-rename');
 var sh = require('shelljs');
 var inject = require('gulp-inject');
+// var angularFilesort = require('gulp-angular-filesort');
+// var naturalSort = require('gulp-natural-sort');
 
 var paths = {
   sass: ['./scss/**/*.scss'],
   javascript: [
     './www/**/*.js',
-    './www/js/app.js',
-    '!./www/lib/**'
+    '!./www/lib/**',
   ],
   css: [
     './www/**/*.css',

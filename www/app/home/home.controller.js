@@ -1,8 +1,7 @@
-(function () {
-  'use strict';
+// (function () {
+//   'use strict';
 
-  angular
-    .module('topthat')
+  angular.module('topthat.home', [])
     .controller('HomeController', HomeController);
 
   HomeController.$inject = ['$scope', '$ionicModal', '$timeout'];
@@ -354,5 +353,5 @@
     }
   }
 
-})();
+// })();
 
