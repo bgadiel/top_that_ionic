@@ -20,11 +20,20 @@ $dark:                            #444 !default;
 @import "typography.scss";
 @import "tabs.scss";
 @import "side_menu.scss";
+@import "main.scss";
+
+%clearfix {
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
 
 *,
 *:after,
 *:before {
-  @include box-sizing(border-box !important);
+	@include box-sizing(border-box !important);
 }
 
 body {

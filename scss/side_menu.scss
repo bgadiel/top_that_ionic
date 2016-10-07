@@ -69,25 +69,18 @@ ion-side-menu.menu {
 
 }
 
-// ion-item {
-
-// 	background-color: none !important;
-// 	border: none !important;
-// 	border-bottom: 1px solid #444 !important;
-
-// 	&:last-child {
-// 		border: none !important;
-// 	}
-
-// 	.item-content {
-// 		font-family: 'open_sansregular' !important;
-// 	}
-
-// 	.icon {
-// 		color: $base-color !important;
-// 	}
-
-// }
+ion-side-menu-content {
+	ion-header-bar {
+		span.nav-bar-title {
+			display: block;
+			height: 100%;
+			img {
+				height: 100%;
+				padding: 4px 0;
+			}
+		}
+	}
+}
 
 .video-container {
   position: relative;

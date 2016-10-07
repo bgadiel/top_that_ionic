@@ -36,9 +36,7 @@ ion-tabs .tab-nav.tabs {
     padding-top: 5px; }
 
 ion-tabs ion-nav-view.tab-content ion-view ion-content {
-  color: #ddd;
-  top: 75px;
-  padding: 10px; }
+  color: #ddd; }
 
 ion-side-menu.menu  {
   background-color: rgba(71, 52, 39, 0.9);
@@ -78,6 +76,13 @@ ion-side-menu.menu  {
         color: #ddd;
         font-size: 24px; }
 
+ion-side-menu-content ion-header-bar span.nav-bar-title {
+  display: block;
+  height: 100%; }
+  ion-side-menu-content ion-header-bar span.nav-bar-title img {
+    height: 100%;
+    padding: 4px 0; }
+
 .video-container {
   position: relative;
   padding-bottom: 56.25%;
@@ -93,6 +98,61 @@ ion-side-menu.menu  {
   left: 0;
   width: 100%;
   height: 100%; }
+
+ion-content {
+  background-image: url("../img/bg_pattern.png");
+  padding-top: 15px !important; }
+  ion-content.has-tabs-top {
+    top: 75px; }
+  ion-content .list .list-section-header {
+    display: block;
+    background-color: #181616;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    padding: 10px 15px; }
+    ion-content .list .list-section-header i.icon {
+      color: #05a48f;
+      font-size: 1.5em;
+      margin-right: 5px; }
+    ion-content .list .list-section-header span.label {
+      position: relative;
+      font-size: 0.8em;
+      top: -4px; }
+  ion-content .list .card {
+    background-color: #252222;
+    margin: 0 15px 15px; }
+    ion-content .list .card .item {
+      background: none;
+      border: none; }
+      ion-content .list .card .item.user-info-container {
+        color: #919191;
+        font-size: 0.9em; }
+        ion-content .list .card .item.user-info-container .left {
+          float: left;
+          margin-right: 15px; }
+        ion-content .list .card .item.user-info-container .right {
+          float: left; }
+          ion-content .list .card .item.user-info-container .right div:not(:last-child), ion-content .list .card .item.user-info-container .right ul:not(:last-child) {
+            margin-bottom: 10px; }
+        ion-content .list .card .item.user-info-container img.user-image {
+          border-radius: 50px;
+          border: 2px solid #05a48f;
+          width: 50px; }
+        ion-content .list .card .item.user-info-container span.user-name-label {
+          font-style: italic; }
+        ion-content .list .card .item.user-info-container span.user-name {
+          color: #05a48f;
+          font-family: "open_sansbold", "-apple-system", "Helvetica Neue", "Roboto", "Segoe UI", sans-serif; }
+        ion-content .list .card .item.user-info-container div.datetime {
+          font-style: italic; }
+        ion-content .list .card .item.user-info-container ul.action li {
+          display: inline; }
+          ion-content .list .card .item.user-info-container ul.action li:not(:last-child)::after {
+            content: '|';
+            font-size: 0.75em;
+            position: relative;
+            top: -2px;
+            margin: 0 10px; }
 
 *,
 *:after,

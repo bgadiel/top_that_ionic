@@ -1,0 +1,109 @@
+ion-content {
+
+	background-image: url('../img/bg_pattern.png');
+	padding-top: 15px !important;
+
+	&.has-tabs-top {
+		top: 75px;
+	}
+
+	.list {
+
+		.list-section-header {
+
+			display: block;
+			background-color: darken($dark, 5%);
+			margin-bottom: 15px;
+			text-transform: uppercase;
+			padding: 10px 15px;
+
+			i.icon {
+				color: $green;
+				font-size: 1.5em;
+				margin-right: 5px;
+			}
+
+			span.label {
+				position: relative;
+				font-size: 0.8em;
+				top: -4px;
+			}
+
+		}
+
+		.card {
+
+			background-color: $dark;
+			margin: 0 15px 15px;
+
+			.item {
+
+				background: none;
+				border: none;
+
+				&.user-info-container {
+
+					color: darken($base-color, 30%);
+					font-size: 0.9em;
+
+					.left {
+						float: left;
+						margin-right: 15px;
+					}
+
+					.right {
+
+						float: left;
+
+						div:not(:last-child), ul:not(:last-child) {
+							margin-bottom: 10px; 
+						}
+
+					}
+
+					img.user-image {
+						border-radius: 50px;
+						border: 2px solid $green;
+						width: 50px;
+					}
+
+					span.user-name-label {
+						font-style: italic;
+					}
+
+					span.user-name {
+						color: $green;
+						font-family: $font-family-sans-serif-bold;
+					}
+
+					div.datetime {
+						font-style: italic;
+					}
+
+					ul.action {
+
+						li {
+
+							display: inline;
+
+							&:not(:last-child)::after {
+								content: '|';
+								font-size: 0.75em;
+								position: relative;
+								top: -2px;
+								margin: 0 10px; 
+							}
+
+						}
+
+					}
+
+				}
+
+			}
+
+		}
+
+	}
+
+}
