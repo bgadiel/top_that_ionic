@@ -27,24 +27,33 @@
             <h2 class="menu-text">Home</h2>
           </ion-item>
           <ion-item ui-sref-active="active" class="item-icon-left" menu-close ui-sref="app.home.main">
-            <i class="menu-icon icon ion-person-stalker"></i>
-            <h2 class="menu-text">Friends</h2>
+            <i class="menu-icon icon ion-android-search"></i>
+            <h2 class="menu-text">Search</h2>
           </ion-item>
           <ion-item ui-sref-active="active" class="item-icon-left" menu-close ui-sref="app.home.main">
             <i class="menu-icon icon ion-ribbon-b"></i>
-            <h2 class="menu-text">Prices</h2>
+            <h2 class="menu-text">Catgeories</h2>
+          </ion-item>
+          <ion-item class="item-stable"
+                    ng-click="toggleGroup(group)"
+                    ng-class="{active: isGroupShown(group)}">
+            <i class="icon" ng-class="isGroupShown(group) ? 'ion-minus' : 'ion-plus'"></i>
+          </ion-item>
+          <ion-item class="item-accordion"
+                    ng-show="isGroupShown(group)">
+            {{item}}
           </ion-item>
         </ion-list>
       </div>
       <div class="menu-bottom-options">
         <ion-list>
           <ion-item ui-sref-active="active" class="item-icon-left" menu-close ui-sref="app.home.main">
-            <i class="menu-icon icon ion-person-add"></i>
-            <h2 class="menu-text">Find Friends</h2>
-          </ion-item>
-          <ion-item ui-sref-active="active" class="item-icon-left" menu-close ui-sref="app.home.main">
             <i class="menu-icon icon ion-ios-settings-strong"></i>
             <h2 class="menu-text">Settings</h2>
+          </ion-item>
+          <ion-item ui-sref-active="active" class="item-icon-left" menu-close ui-sref="app.home.main">
+            <i class="menu-icon icon ion-android-call"></i>
+            <h2 class="menu-text">Contact Us</h2>
           </ion-item>
         </ion-list>
       </div>

@@ -5,6 +5,21 @@
   'use strict';
 
   angular.module('topthat', ['ionic', 'topthat.home'])
+    .controller('AppController', function($scope) {
+      $scope.groups = [];
+
+      $scope.toggleGroup = function(group) {
+        if ($scope.isGroupShown(group)) {
+          $scope.shownGroup = null;
+        } else {
+          $scope.shownGroup = group;
+        }
+      };
+      $scope.isGroupShown = function(group) {
+        return $scope.shownGroup === group;
+      };
+
+    })
 
     .run(function($ionicPlatform) {
       $ionicPlatform.ready(function() {
@@ -31,6 +46,7 @@
         .state('app', {
           url: "/app",
           abstract: true,
+          controller: 'AppController',
           templateUrl: 'app/layout/side-menu.html'
         });
 
