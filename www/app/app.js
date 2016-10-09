@@ -4,16 +4,16 @@
 (function () {
   'use strict';
 
-  angular.module('topthat', ['ionic', 'topthat.home'])
-    .controller('AppController', function($scope) {
-      //var vm = this;
-      $scope.isShowCat = false;
-
-      $scope.toggleGroup = function() {
-        $scope.isShowCat = $scope.isShowCat === false ? true : false;
-      };
-
-    })
+   angular.module('topthat', ['ionic', 'topthat.home'])
+  //   .controller('AppController', function($scope) {
+  //     //var vm = this;
+  //     $scope.isShowCat = false;
+  //
+  //     $scope.toggleGroup = function() {
+  //       $scope.isShowCat = $scope.isShowCat === false ? true : false;
+  //     };
+  //
+  //   })
 
     .run(function($ionicPlatform) {
       $ionicPlatform.ready(function() {
@@ -40,7 +40,6 @@
         .state('app', {
           url: "/app",
           abstract: true,
-          controller: 'AppController',
           templateUrl: 'app/layout/side-menu.html'
         });
 

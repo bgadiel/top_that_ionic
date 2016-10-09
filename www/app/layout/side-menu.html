@@ -4,11 +4,15 @@
       <ion-nav-back-button class="button-icon ion-arrow-left-c">
       </ion-nav-back-button>
       <ion-nav-buttons side="left">
-        <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+        <button class="button button-icon button-clear ion-ios-gear" menu-toggle="left">
+        </button>
+      </ion-nav-buttons>
+      <ion-nav-buttons side="right">
+        <button class="button button-icon button-clear ion-trophy" menu-toggle="right">
         </button>
       </ion-nav-buttons>
     </ion-nav-bar>
-    <ion-nav-view></ion-nav-view>
+    <ion-nav-view animation="slide-left-right"></ion-nav-view>
   </ion-side-menu-content>
 
   <!-- JOÃO: expose-aside-when="(max-width:670px)" -->
@@ -34,16 +38,6 @@
             <i class="menu-icon icon ion-ribbon-b"></i>
             <h2 class="menu-text">Catgeories</h2>
           </ion-item>
-          <ion-item class="item-stable"
-                    ng-click="toggleGroup()"
-                    ng-class="{active: isShowCat}">
-            <i class="icon" ng-class="isShowCat ? 'ion-minus' : 'ion-plus'"></i>
-          </ion-item>
-          <ion-item class="item-icon-left item-accordion" ng-show="isShowCat">
-            <i class="menu-icon icon ion-ribbon-b"></i>
-            <h2 class="menu-text">Catgeories11</h2>
-          </ion-item>
-
         </ion-list>
       </div>
       <div class="menu-bottom-options">
@@ -58,6 +52,27 @@
           </ion-item>
         </ion-list>
       </div>
+    </ion-content>
+  </ion-side-menu>
+
+  <ion-side-menu side="right">
+    <ion-content has-bouncing="false" scroll="false" class="menu-outer">
+      <div class="menu-top-options">
+        <ion-list>
+          <ion-item ui-sref-active="active" menu-close ui-sref="app.home.main">
+            <h2 class="menu-text">Cat1</h2>
+          </ion-item>
+          <ion-item ui-sref-active="active" menu-close ui-sref="app.home.main">
+            <h2 class="menu-text">Cat2</h2>
+          </ion-item>
+        </ion-list>
+      </div>
+        <ion-list>
+          <ion-item ui-sref-active="active" class="item-icon-right" menu-close ui-sref="app.home.main">
+            <i class="menu-icon icon ion-plus-circled"></i>
+            <h2 class="menu-text">Create New Contest</h2>
+          </ion-item>
+        </ion-list>
     </ion-content>
   </ion-side-menu>
 </ion-side-menus>
