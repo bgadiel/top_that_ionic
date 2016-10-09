@@ -6,17 +6,11 @@
 
   angular.module('topthat', ['ionic', 'topthat.home'])
     .controller('AppController', function($scope) {
-      $scope.groups = [];
+      //var vm = this;
+      $scope.isShowCat = false;
 
-      $scope.toggleGroup = function(group) {
-        if ($scope.isGroupShown(group)) {
-          $scope.shownGroup = null;
-        } else {
-          $scope.shownGroup = group;
-        }
-      };
-      $scope.isGroupShown = function(group) {
-        return $scope.shownGroup === group;
+      $scope.toggleGroup = function() {
+        $scope.isShowCat = $scope.isShowCat === false ? true : false;
       };
 
     })
