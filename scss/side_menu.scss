@@ -5,6 +5,10 @@ ion-side-menu.menu {
 	background-image: -webkit-linear-gradient(left top, rgba($menu-bg-gradient-1, 0.99) 0%, rgba($menu-bg-gradient-2, 0.99) 19%, rgba($menu-bg-gradient-3, 0.9) 46%, rgba($menu-bg-gradient-4, 0.91) 53%, rgba($menu-bg-gradient-5, 0.95) 86%, rgba($menu-bg-gradient-6, 0.95) 100%);
 	background-image: linear-gradient(to right bottom, rgba($menu-bg-gradient-1, 0.99) 0%, rgba($menu-bg-gradient-2, 0.99) 19%, rgba($menu-bg-gradient-3, 0.9) 46%, rgba($menu-bg-gradient-4, 0.91) 53%, rgba($menu-bg-gradient-5, 0.95) 86%, rgba($menu-bg-gradient-6, 0.95) 100%);
 
+	ion-content {
+		background-image: none;
+	}
+
 	.menu-bottom-options {
 		position: absolute;
 		bottom: 0;

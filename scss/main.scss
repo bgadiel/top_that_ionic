@@ -1,10 +1,105 @@
 ion-content {
 
 	background-image: url('../img/bg_pattern.png');
-	padding-top: 15px !important;
+	padding-top: 16px !important;
 
 	&.has-tabs-top {
-		top: 75px;
+		top: 79px;
+	}
+
+	.content-header {
+
+		margin-top: -16px;
+		padding: 16px 32px;
+		background: $dark;
+		margin-bottom: 16px;
+		text-align: center;
+
+		.timer {
+
+			@extend %clearfix;
+			width: 270px;
+			margin: 0 auto 16px;
+
+			.circle {
+				height: 70px;
+				width: 70px;
+				padding: 2px;
+				border-radius: 35px;
+				float: left;
+				background-image: -moz-linear-gradient(left, #bd03ae 0%, #e4a101 33%, #08b8ba 66%, #10bc45 100%);
+				background-image: -webkit-linear-gradient(left, #bd03ae 0%, #e4a101 33%, #08b8ba 66%, #10bc45 100%);
+				background-image: linear-gradient(to right, #bd03ae 0%, #e4a101 33%, #08b8ba 66%, #10bc45 100%);
+
+				&:not(:last-child) {
+					margin-right: 30px;
+				}
+
+				.inside {
+					height: 100%;
+					background-color: $dark;
+					border-radius: 35px;
+					text-transform: uppercase;
+					text-align: center;
+					position: relative;
+
+					.value {
+						color: #ddd;
+						font-size: 1.9em;
+						position: relative;
+						top: 22%;
+					}
+
+					.label {
+						color: #888;
+						font-size: 0.5em;
+						font-weight: bold;
+						position: relative;
+						top: 26%;
+					}
+				}
+			}
+
+		}
+
+		.title {
+			text-transform: uppercase;
+			font-size: 1.5em;
+			white-space: normal;
+			margin-bottom: 16px;
+		}
+
+		.category-tag {
+			display: inline-block;
+			text-align: center;
+			font-size: 0.8em;
+			border-width: 1px;
+			border-style: solid;
+			border-radius: 5px;
+			padding: 5px 7px;
+			text-transform: uppercase;
+			margin-bottom: 10px;
+
+			&.magenta { color: $magenta; border-color: $magenta; }
+			&.orange  { color: $orange;  border-color: $orange;  }
+			&.cyan    { color: $cyan;    border-color: $cyan;    }
+			&.green   { color: $green;   border-color: $green;   }
+
+			&::before {
+				margin-right: 5px;
+			}
+		}
+
+		.button-wrapper {
+			@extend %clearfix;
+			.button {
+				display: block;
+				width: 46%;
+				&:first-child { float: left; }
+				&:last-child { float: right; }
+			}
+		}
+
 	}
 
 	.list {
@@ -18,7 +113,7 @@ ion-content {
 			padding: 10px 15px;
 
 			i.icon {
-				color: $green;
+				color: $accent-color;
 				font-size: 1.5em;
 				margin-right: 5px;
 			}
@@ -35,6 +130,7 @@ ion-content {
 
 			background-color: $dark;
 			margin: 0 15px 15px;
+			border-radius: 0 0 5px 5px;
 
 			.item {
 
@@ -45,26 +141,15 @@ ion-content {
 
 					color: darken($base-color, 30%);
 					font-size: 0.9em;
-
-					.left {
-						float: left;
-						margin-right: 15px;
-					}
-
-					.right {
-
-						float: left;
-
-						div:not(:last-child), ul:not(:last-child) {
-							margin-bottom: 10px; 
-						}
-
-					}
+					padding-left: 82px;
+					min-height: 82px;
 
 					img.user-image {
 						border-radius: 50px;
-						border: 2px solid $green;
+						border: 2px solid $accent-color;
 						width: 50px;
+						position: absolute;
+						left: 16px;
 					}
 
 					span.user-name-label {
@@ -72,28 +157,60 @@ ion-content {
 					}
 
 					span.user-name {
-						color: $green;
+						color: $accent-color;
 						font-family: $font-family-sans-serif-bold;
 					}
 
 					div.datetime {
-						font-style: italic;
+						margin: 10px 0 4px;
 					}
 
-					ul.action {
+					div.datetime, span.counter {
+						font-style: italic;
+						font-size: 0.8em;
+					}
 
-						li {
+					span.counter {
+						margin-right: 10px;
+						&::before {
+							margin-right: 4px;
+						}
+					}
 
-							display: inline;
+				}
 
-							&:not(:last-child)::after {
-								content: '|';
-								font-size: 0.75em;
-								position: relative;
-								top: -2px;
-								margin: 0 10px; 
-							}
+			}
 
+			.button-bar {
+
+				border-top: 1px solid lighten($dark, 6%);
+
+				button {
+					
+					height: 35px;
+					width: 33.333333%;
+					color: $base-color;
+					font-size: 0.8em;
+					transition: background-color 0.1s ease, color 0.1s ease;
+					background-color: $dark;
+					border: none;
+
+					&.like-action span::before    { color: $magenta; }
+					&.comment-action span::before { color: $orange; }
+					&.share-action span::before   { color: $cyan; }
+
+					&.activated {
+						background-color: lighten($dark, 2%);
+						border: none;
+					}
+
+					span {
+
+						&::before {
+							margin-right: 6px;
+							font-size: 1.5em;
+							position: relative;
+							top: 2px;
 						}
 
 					}

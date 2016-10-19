@@ -1,0 +1,67 @@
+.button {
+
+	min-height: 35px !important;
+	line-height: 35px !important;
+	transition: background-color 0.1s ease, border-color 0.1s ease;
+
+	&.button-accent {
+		background-color: $accent-color;
+		border-color: $accent-color;
+		color: #fff;
+		&.activated {
+			border-color: darken($accent-color, 10%);
+			background-color: lighten($accent-color, 3%);
+		}	
+	}
+
+	&.button-black {
+		background-color: #222;
+		border-color: $accent-color;
+		color: $base-color;
+		&.activated {
+			border-color: darken($accent-color, 5%);
+			background-color: #151515;
+		}
+	}
+
+	&.button-pink {
+		background-color: $magenta;
+		color: #eee;
+		border-color: $magenta;
+		&.activated {
+			background-color: lighten($magenta, 10%);
+			border-color: $magenta;
+		}
+	}
+
+	&.button-orange {
+		background-color: $orange;
+		color: #eee;
+		border-color: $orange;
+		&.activated {
+			background-color: lighten($orange, 10%);
+			border-color: $orange;
+		}
+	}
+
+	&.button-cyan {
+		background-color: $cyan;
+		color: #eee;
+		border-color: $cyan;
+		&.activated {
+			background-color: lighten($cyan, 10%);
+			border-color: $cyan;
+		}
+	}
+
+	&.button-green {
+		background-color: $green;
+		color: #eee;
+		border-color: $green;
+		&.activated {
+			background-color: lighten($green, 10%);
+			border-color: $green;
+		}
+	}
+
+}
