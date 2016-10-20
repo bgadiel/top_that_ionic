@@ -14,8 +14,8 @@ angular.module('topthat.home')
         templateUrl: "app/home/tabs.html"
       })
 
-      .state('app.home.main', {
-        url: '/main',
+      .state('app.home.featured', {
+        url: '/featured',
         views: {
           'main-tab': {
             templateUrl: 'app/home/home.main/home.main.html',
@@ -24,8 +24,8 @@ angular.module('topthat.home')
         }
       })
 
-      .state('app.home.trends', {
-        url: '/trends',
+      .state('app.home.custom', {
+        url: '/custom',
         views: {
           'trends-tab': {
             templateUrl: 'app/home/home.trends/home.trends.html',

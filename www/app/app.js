@@ -50,7 +50,7 @@
         //})
 
       // if none of the above states are matched, use this as the fallback
-      $urlRouterProvider.otherwise('/app/home/main');
+      $urlRouterProvider.otherwise('/app/home/featured');
     });
 
 })();

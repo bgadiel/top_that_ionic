@@ -18,8 +18,9 @@ var paths = {
   ],
   css: [
     './www/**/*.css',
-    './www/css/ionic.app*.css',
-    '!./www/lib/**'
+    './www/css/ionic.app.css',
+    '!./www/lib/**',
+    '!./www/css/ionic.app.min.css'
   ]
 };
 
