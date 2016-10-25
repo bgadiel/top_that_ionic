@@ -1,19 +1,4 @@
 <ion-side-menus enable-menu-with-back-views="false">
-  <ion-side-menu-content>
-    <ion-nav-bar class="bar-dark">
-      <ion-nav-back-button class="button-icon ion-arrow-left-c">
-      </ion-nav-back-button>
-      <ion-nav-buttons side="left">
-        <button class="button button-icon button-clear ion-ios-gear" menu-toggle="left">
-        </button>
-      </ion-nav-buttons>
-      <ion-nav-buttons side="right">
-        <button class="button button-icon button-clear ion-trophy" menu-toggle="right">
-        </button>
-      </ion-nav-buttons>
-    </ion-nav-bar>
-    <ion-nav-view animation="slide-left-right"></ion-nav-view>
-  </ion-side-menu-content>
 
   <!-- JOÃO: expose-aside-when="(max-width:670px)" -->
   <ion-side-menu side="left">
@@ -53,6 +38,50 @@
       </div>
     </ion-content>
   </ion-side-menu>
+
+  <ion-side-menu-content>
+    <ion-nav-bar class="bar-dark">
+
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+
+      <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-ios-gear" menu-toggle="left">
+        </button>
+      </ion-nav-buttons>
+
+      <ion-nav-title>
+        <img src="img/logo.png">
+      </ion-nav-title>
+
+      <ion-nav-buttons side="right">
+        <button class="button button-icon button-clear ion-trophy" menu-toggle="right">
+        </button>
+      </ion-nav-buttons>
+
+    </ion-nav-bar>
+
+    <!--<ion-nav-view animation="slide-left-right"></ion-nav-view>-->
+
+    <!-- TABS -->
+
+    <ion-tabs class="tabs-dark tabs-icon-top">
+      <ion-tab title="Featured" ui-sref="app.featured">
+        <ion-nav-view name="featured-tab"></ion-nav-view>
+      </ion-tab>
+
+      <ion-tab title="Newest" ui-sref="app.new">
+        <ion-nav-view name="new-tab"></ion-nav-view>
+      </ion-tab>
+
+      <ion-tab title="For You" ui-sref="app.trends">
+        <ion-nav-view name="trends-tab"></ion-nav-view>
+      </ion-tab>
+    </ion-tabs>
+
+    <!-- END OF TABS -->
+
+  </ion-side-menu-content>
 
   <ion-side-menu side="right">
     <ion-content has-bouncing="false" scroll="false" class="menu-outer">

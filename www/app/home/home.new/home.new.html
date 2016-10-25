@@ -1,7 +1,85 @@
 <ion-view>
+  <!--<ion-nav-buttons side="right">-->
+  <!--<div class="bar bar-header item-input-inset">-->
+  <!--<button class="button button-light button-light">Categories</button>-->
+  <!--</div>-->
+  <!--</ion-nav-buttons>-->
   <ion-nav-title>
     <img src="img/logo.png">
   </ion-nav-title>
-  <ion-content>
+  <ion-content has-bouncing="false">
+    <div class="contest-container" collection-repeat="contest in contests" item-height="600">
+      <div class="content-header">
+        <div class="timer">
+          <div class="circle">
+            <div class="inside">
+              <div class="value">2</div>
+              <div class="label">days</div>
+            </div>
+          </div>
+          <div class="circle">
+            <div class="inside">
+              <div class="value">15</div>
+              <div class="label">hours</div>
+            </div>
+          </div>
+          <div class="circle">
+            <div class="inside">
+              <div class="value">23</div>
+              <div class="label">minutes</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="category-tag orange icon ion-ios-musical-notes">{{contest.category}}</div>
+
+        <h2 class="title">{{contest.title}}</h2>
+
+        <div class="button-wrapper">
+          <button class="button button-black" ui-sref="app.new_contest({ contestID: contest.id })">ENTER</button>
+          <button class="button button-accent">UPLOAD</button>
+        </div>
+
+      </div>
+      <div class="list">
+        <div class="list-section">
+          <!--<div class="list-section-header">-->
+          <!--<i class="icon ion-android-time"></i>-->
+          <!--<span class="label">Latest Video</span>-->
+          <!--</div>-->
+          <div class="card">
+
+            <div class="item user-info-container">
+              <img class="user-image" src="{{contest.videos[0].user.image_url}}" alt="">
+              <div>
+                <span class="user-name-label">by </span>
+                <span class="user-name">{{contest.videos[0].user.details.user_name}}</span>
+              </div>
+              <!--<div class="datetime">{{contest.videos[0].user.created_time}}</div>-->
+              <!--<span class="counter likes icon ion-heart">12 likes</span>-->
+              <!--<span class="counter comments icon ion-chatbubble">23 comments</span>-->
+            </div>
+            <div class="item item-image">
+              <img src="img/video.png"/>
+              <!-- JOAO: Temporarily replaced the video with an image because of the scroll issue -->
+              <!--<div class="video-container">
+                <iframe src="https://www.youtube.com/embed/wyVM1evRxNw" frameborder="0" allowfullscreen></iframe>
+              </div>-->
+            </div>
+            <div class="button-bar">
+              <button class="like-action pressed">
+                <span class="icon ion-heart"><span class="value"></span>33</span>
+              </button>
+              <button class="comment-action">
+                <span class="icon ion-chatbubble"><span class="value"></span>233</span>
+              </button>
+              <button class="share-action">
+                <span class="icon ion-android-share-alt"><span class="value"></span>323</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </ion-content>
 </ion-view>

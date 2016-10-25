@@ -4,7 +4,7 @@
 (function () {
   'use strict';
 
-   angular.module('topthat', ['ionic', 'topthat.home'])
+   angular.module('topthat', ['ionic', 'topthat.home', 'topthat.contest', 'topthat.blocks'])
   //   .controller('AppController', function($scope) {
   //     //var vm = this;
   //     $scope.isShowCat = false;
@@ -43,14 +43,8 @@
           templateUrl: 'app/layout/side-menu.html'
         });
 
-        // .state('app.auth', {
-        //   url: "/auth",
-        //   abstract: true,
-        //   template: '<ion-view/>'
-        //})
-
       // if none of the above states are matched, use this as the fallback
-      $urlRouterProvider.otherwise('/app/home/featured');
+      $urlRouterProvider.otherwise('/app/featured');
     });
 
 })();

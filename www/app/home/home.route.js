@@ -8,33 +8,18 @@ angular.module('topthat.home')
 
     $stateProvider
 
-      .state('app.home', {
-        url: "/home",
-        abstract: true,
-        templateUrl: "app/home/tabs.html"
-      })
-
-      .state('app.home.featured', {
+      .state('app.featured', {
         url: '/featured',
         views: {
-          'main-tab': {
-            templateUrl: 'app/home/home.main/home.main.html',
+          'featured-tab': {
+            templateUrl: 'app/home/home.featured/home.featured.html',
             controller: 'HomeController'
           }
         }
       })
 
-      .state('app.home.custom', {
-        url: '/custom',
-        views: {
-          'trends-tab': {
-            templateUrl: 'app/home/home.trends/home.trends.html',
-            controller: 'HomeController'
-          }
-        }
-      })
 
-      .state('app.home.new', {
+      .state('app.new', {
         url: '/new',
         views: {
           'new-tab': {
@@ -42,6 +27,16 @@ angular.module('topthat.home')
             controller: 'HomeController'
           }
         }
-      });
+      })
 
+
+      .state('app.trends', {
+        url: '/trends',
+        views: {
+          'trends-tab': {
+            templateUrl: 'app/home/home.trends/home.trends.html',
+            controller: 'HomeController'
+          }
+        }
+      });
   });

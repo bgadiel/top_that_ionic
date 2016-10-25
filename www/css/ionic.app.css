@@ -252,13 +252,14 @@ ion-content {
         color: #919191;
         font-size: 0.9em;
         padding-left: 82px;
-        min-height: 82px; }
+        min-height: 50px; }
         ion-content .list .card .item.user-info-container img.user-image {
           border-radius: 50px;
           border: 2px solid #05a48f;
-          width: 50px;
+          width: 35px;
           position: absolute;
-          left: 16px; }
+          left: 16px;
+          top: 7px; }
         ion-content .list .card .item.user-info-container span.user-name-label {
           font-style: italic; }
         ion-content .list .card .item.user-info-container span.user-name {
