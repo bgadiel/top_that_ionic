@@ -4,7 +4,7 @@
 (function () {
   'use strict';
 
-   angular.module('topthat', ['ionic', 'topthat.home', 'topthat.contest', 'topthat.blocks'])
+   angular.module('topthat', ['ionic', 'topthat.home', 'topthat.contest'])
   //   .controller('AppController', function($scope) {
   //     //var vm = this;
   //     $scope.isShowCat = false;
@@ -44,7 +44,7 @@
         });
 
       // if none of the above states are matched, use this as the fallback
-      $urlRouterProvider.otherwise('/app/featured');
+      $urlRouterProvider.otherwise('/app/home');
     });
 
 })();

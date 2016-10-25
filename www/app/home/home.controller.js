@@ -110,7 +110,20 @@
     //         ]
     //       }
     //     ],
-    //     "location": "Nevada"
+    //     "location": "Nevada",
+    //     "comments": [{
+    //          "text": "YESSSS!",
+    //          "creation_time": "2015-04-16T01:09:42 -03:00",
+    //          "video_id": 22
+    //        },{
+    //          "text": "YESSSS2!",
+    //          "creation_time": "2015-04-16T01:09:42 -03:00",
+    //          "video_id": 11
+    //        },{
+    //          "text": "YESSSS3!",
+    //          "creation_time": "2015-04-16T01:09:42 -03:00",
+    //          "video_id": 223
+    //        }]
     //   },
     //   {
     //     "id": "user_id_58087b47303a0e1feebcd1f4",
@@ -132,7 +145,20 @@
     //         ]
     //       }
     //     ],
-    //     "location": "Montana"
+    //     "location": "Montana",
+    //      "comments": [{
+      //          "text": "YESSSS!",
+      //          "creation_time": "2015-04-16T01:09:42 -03:00",
+      //          "video_id": 22
+      //        },{
+      //          "text": "YESSSS2!",
+      //          "creation_time": "2015-04-16T01:09:42 -03:00",
+      //          "video_id": 11
+      //        },{
+      //          "text": "YESSSS3!",
+      //          "creation_time": "2015-04-16T01:09:42 -03:00",
+      //          "video_id": 223
+      //        }]
     //   },
     //   {
     //     "id": "user_id_58087b4724e5ce6f13ba7299",
@@ -226,9 +252,9 @@
     //     ]
     //   }
     // ];
-    $scope.contests = [
+    vm.contests = [
       {
-        "id": "contest_id_1",
+        "id": "1",
         "start_time": "2016-01-07T05:46:27 -02:00",
         "end_time": "2016-08-15T02:00:57 -03:00",
         "title": "The Best Voice ever!",
@@ -239,20 +265,9 @@
             "video_url": "www.cdn.video.com/9d0c60af-a069-484e-987f-fad9935dc9a7",
             "upload_time": "2015-07-31T02:10:37 -03:00",
             "user": {
-              "id": "user_id_58087b477fbe08966279b32d",
               "image_url": "https://randomuser.me/api/portraits/men/50.jpg",
               "created_time": "2015-04-16T01:09:42 -03:00",
-              "video_ids": [
-                "video_id_44"
-              ],
-              "details":
-                {
-                  "p_name": "Flora",
-                  "l_name": "Parks",
-                  "user_name": "fparks",
-                  "email": "floraparks@zaggle.com"
-                },
-              "location": "Nevada"
+              "user_name": "fparks",
             },
             "social": [
               {
@@ -260,7 +275,34 @@
                 "comments": 36,
                 "like": 44
               }
-            ]
+            ],
+            "comments": [{
+              "comment_id": 0,
+              "text": "soooo great!",
+              "user": {
+                "image_url": "https://randomuser.me/api/portraits/men/50.jpg",
+                "created_time": "2015-04-16T01:09:42 -03:00",
+                "user_name": "fpark22",
+              }
+            }, {
+              "comment_id": 1,
+              "text": "soooo great2!",
+              "user": {
+                "image_url": "https://randomuser.me/api/portraits/men/23.jpg",
+                "created_time": "2015-04-16T01:09:42 -03:00",
+                "user_name": "fparks",
+              }
+            },
+              {
+                "comment_id": 2,
+                "text": "soooo great!",
+                "user": {
+                  "image_url": "https://randomuser.me/api/portraits/men/80.jpg",
+                  "created_time": "2015-04-16T01:09:42 -03:00",
+                  "user_name": "fparks33",
+                }
+              }
+              ]
           },
           {
             "id": "video_id_15",
@@ -268,7 +310,7 @@
             "upload_time": "2016-03-01T01:00:35 -02:00",
             "user": {
               "id": "user_id_58087b4724e5ce6f13ba7299",
-              "image_url": "https://randomuser.me/api/portraits/men/9.jpg/",
+              "image_url": "https://randomuser.me/api/portraits/men/14.jpg",
               "created_time": "2016-02-10T11:13:42 -02:00",
               "video_ids": [
                 "video_id_15"
@@ -296,7 +338,7 @@
             "upload_time": "2015-06-23T06:47:05 -03:00",
             "user": {
               "id": "user_id_58087b47303a0e1feebcd1f4",
-              "image_url": "https://randomuser.me/api/portraits/men/23.jpg/",
+              "image_url": "https://randomuser.me/api/portraits/men/85.jpg",
               "created_time": "2014-12-22T03:40:38 -02:00",
               "video_ids": [
                 "video_id_38"
@@ -321,7 +363,7 @@
         ]
       },
       {
-        "id": "contest_id_2",
+        "id": "2",
         "start_time": "2014-01-09T03:43:37 -02:00",
         "end_time": "2014-04-18T09:58:24 -03:00",
         "title": "The highest Jumps ever!",

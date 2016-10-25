@@ -31,7 +31,7 @@
         <h2 class="title">{{contest.title}}</h2>
 
         <div class="button-wrapper">
-          <button class="button button-black" ui-sref="app.featured_contest({ contestID: contest.id })">ENTER</button>
+          <button class="button button-black" ui-sref="app.contest({ contestID: contest.id })">ENTER</button>
           <button class="button button-accent">UPLOAD</button>
         </div>
 
@@ -46,10 +46,8 @@
 
             <div class="item user-info-container">
               <img class="user-image" src="{{contest.videos[0].user.image_url}}" alt="">
-              <div>
                 <span class="user-name-label">by </span>
                 <span class="user-name">{{contest.videos[0].user.details.user_name}}</span>
-              </div>
               <!--<div class="datetime">{{contest.videos[0].user.created_time}}</div>-->
               <!--<span class="counter likes icon ion-heart">12 likes</span>-->
               <!--<span class="counter comments icon ion-chatbubble">23 comments</span>-->

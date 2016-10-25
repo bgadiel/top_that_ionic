@@ -1,5 +1,5 @@
-<ion-view cache-view="false" hide-tabs>
-  <ion-content has-bouncing="false">
+<ion-view>
+  <ion-content has-bouncing="false" overflow-scroll="true">
     <div class="contest-container" item-height="600">
       <div class="content-header">
         <div class="timer">
@@ -27,9 +27,9 @@
 
         <h2 class="title">{{vm.contest.title}}</h2>
 
-        <div class="button-wrapper">
-          <button class="button button-accent">UPLOAD</button>
-        </div>
+        <!--<div class="button-wrapper">-->
+        <button class="button button-accent button-block">UPLOAD</button>
+        <!--</div>-->
 
       </div>
       <div class="list">
@@ -39,13 +39,10 @@
           <!--<span class="label">Latest Video</span>-->
           <!--</div>-->
           <div class="card" collection-repeat="video in vm.contest.videos">
-
             <div class="item user-info-container">
               <img class="user-image" src="{{video.user.image_url}}" alt="">
-              <div>
-                <span class="user-name-label">by </span>
-                <span class="user-name">{{video.user.details.user_name}}</span>
-              </div>
+              <span class="user-name-label">by </span>
+              <span class="user-name">{{video.user.details.user_name}}</span>
               <!--<div class="datetime">{{contest.videos[0].user.created_time}}</div>-->
               <!--<span class="counter likes icon ion-heart">12 likes</span>-->
               <!--<span class="counter comments icon ion-chatbubble">23 comments</span>-->
@@ -68,9 +65,20 @@
                 <span class="icon ion-android-share-alt"><span class="value"></span>323</span>
               </button>
             </div>
+
+            <ion-content overflow-scroll="true">
+              <div class="user-comments-container">
+                <div class="row" collection-repeat="comment in video.comments" item-width="33%" item-height="200px">
+                  <img class="user-image" src="{{comment.user.image_url}}" alt="">
+                  <span class="user-name">{{comment.user.user_name}}</span>
+                  <span class="user-comment"> {{comment.text}} </span>
+                </div>
+              </div>
+            </ion-content>
           </div>
         </div>
       </div>
+    </div>
     </div>
   </ion-content>
 </ion-view>
