@@ -10,6 +10,10 @@ ContestController.$inject = ['$scope', '$ionicModal', '$timeout', '$stateParams'
 function ContestController($scope, $ionicModal, $timeout, $stateParams) {
   var vm = this;
 
+  $scope.$on('$ionicView.beforeEnter', function (event, viewData) {
+    viewData.enableBack = true;
+  });
+
   // get the id
   vm.id = $stateParams.contestID;
 

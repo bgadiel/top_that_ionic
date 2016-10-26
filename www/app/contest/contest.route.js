@@ -8,10 +8,30 @@ angular.module('topthat.contest')
     $stateProvider
 
       .state('app.contest', {
+        abstract: true,
+        templateUrl: 'app/contest/contestTabs.html',
+      })
+
+
+      .state('app.contest.details', {
         url: '/home/:contestID',
-        templateUrl: 'app/contest/contest.html',
-        controller: 'ContestController',
-        controllerAs: 'vm',
+          views: {
+            'first-round-tab': {
+              templateUrl: 'app/contest/contest.html',
+              controller: 'ContestController',
+              controllerAs: 'vm',
+            },
+            'semifinals-tab': {
+              templateUrl: 'app/contest/contest.html',
+              controller: 'ContestController',
+              controllerAs: 'vm',
+            },
+            'finals-tab': {
+              templateUrl: 'app/contest/contest.html',
+              controller: 'ContestController',
+              controllerAs: 'vm',
+            }
+          }
       });
 
     // .state('app.featured_contest', {
