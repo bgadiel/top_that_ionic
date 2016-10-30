@@ -13,26 +13,64 @@ angular.module('topthat.contest')
       })
 
 
-      .state('app.contest.details', {
-        url: '/home/:contestID',
-          views: {
-            'first-round-tab': {
-              templateUrl: 'app/contest/contest.html',
-              controller: 'ContestController',
-              controllerAs: 'vm',
-            },
-            'semifinals-tab': {
-              templateUrl: 'app/contest/contest.html',
-              controller: 'ContestController',
-              controllerAs: 'vm',
-            },
-            'finals-tab': {
-              templateUrl: 'app/contest/contest.html',
-              controller: 'ContestController',
-              controllerAs: 'vm',
-            }
+      .state('app.contest.first', {
+        url: "/first",
+        views: {
+          'first-round-tab': {
+            templateUrl: 'app/contest/contest.html',
+            controller: 'ContestController',
+            controllerAs: 'vm',
           }
+        }
+      })
+
+      .state('app.contest.semi', {
+        url: "/semi",
+        views: {
+          'semifinals-tab': {
+            templateUrl: 'app/contest/contest.html',
+            controller: 'ContestController',
+            controllerAs: 'vm',
+          }
+        }
+      })
+
+      .state('app.contest.finals', {
+        url: "/finals",
+        views: {
+          'finals-tab': {
+            templateUrl: 'app/contest/contest.html',
+            controller: 'ContestController',
+            controllerAs: 'vm',
+          }
+        }
       });
+
+
+      // .state('app.contest.details', {
+      //   url: '/home/:contestID',
+      //     views: {
+      //       'first-round-tab': {
+      //         templateUrl: 'app/contest/contest.html',
+      //         controller: 'ContestController',
+      //         controllerAs: 'vm',
+      //       },
+      //       'semifinals-tab': {
+      //         templateUrl: 'app/contest/contest.html',
+      //         controller: 'ContestController',
+      //         controllerAs: 'vm',
+      //       },
+      //       'finals-tab': {
+      //         templateUrl: 'app/contest/contest.html',
+      //         controller: 'ContestController',
+      //         controllerAs: 'vm',
+      //       }
+      //     }
+      // });
+
+
+
+
 
     // .state('app.featured_contest', {
     //   url: '/featured/:contestID',
