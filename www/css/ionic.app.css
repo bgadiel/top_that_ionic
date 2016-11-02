@@ -63,6 +63,16 @@ $dark:                            #444 !default;
     .button.button-green.activated {
       background-color: #14eb56;
       border-color: #10bc45; }
+  .button.button-transparent {
+    background-color: transparent;
+    color: #ddd;
+    border-color: #777; }
+    .button.button-transparent.activated {
+      background-color: rgba(255, 255, 255, 0.05);
+      color: #ddd;
+      border-color: #aaa; }
+    .button.button-transparent:hover {
+      color: #ddd; }
 
 ion-tabs .tab-nav.tabs {
   height: 34px; }
@@ -85,50 +95,54 @@ ion-tabs .tab-nav.tabs {
 ion-tabs ion-nav-view.tab-content ion-view ion-content {
   color: #ddd; }
 
-ion-side-menu.menu  {
+ion-side-menus ion-side-menu.menu {
   background-color: rgba(71, 52, 39, 0.9);
   background-image: -moz-linear-gradient(left top, rgba(46, 46, 46, 0.99) 0%, rgba(56, 56, 56, 0.99) 19%, rgba(77, 77, 77, 0.9) 46%, rgba(79, 79, 79, 0.91) 53%, rgba(82, 82, 82, 0.95) 86%, rgba(87, 87, 87, 0.95) 100%);
   background-image: -webkit-linear-gradient(left top, rgba(46, 46, 46, 0.99) 0%, rgba(56, 56, 56, 0.99) 19%, rgba(77, 77, 77, 0.9) 46%, rgba(79, 79, 79, 0.91) 53%, rgba(82, 82, 82, 0.95) 86%, rgba(87, 87, 87, 0.95) 100%);
   background-image: linear-gradient(to right bottom, rgba(46, 46, 46, 0.99) 0%, rgba(56, 56, 56, 0.99) 19%, rgba(77, 77, 77, 0.9) 46%, rgba(79, 79, 79, 0.91) 53%, rgba(82, 82, 82, 0.95) 86%, rgba(87, 87, 87, 0.95) 100%); }
-  ion-side-menu.menu  ion-content {
+  ion-side-menus ion-side-menu.menu ion-content {
     background-image: none; }
-  ion-side-menu.menu  .menu-bottom-options {
+  ion-side-menus ion-side-menu.menu .menu-bottom-options {
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0; }
-  ion-side-menu.menu  ion-list {
+    ion-side-menus ion-side-menu.menu .menu-bottom-options button.logout {
+      width: 90%;
+      margin: 20px auto;
+      text-transform: uppercase; }
+  ion-side-menus ion-side-menu.menu ion-list {
     display: block;
     background: none; }
-    ion-side-menu.menu  ion-list ion-item.item {
+    ion-side-menus ion-side-menu.menu ion-list ion-item.item {
       background: none;
       border-color: #777; }
-      ion-side-menu.menu  ion-list ion-item.item h1 {
+      ion-side-menus ion-side-menu.menu ion-list ion-item.item h1 {
         font-size: 28px; }
-      ion-side-menu.menu  ion-list ion-item.item p {
+      ion-side-menus ion-side-menu.menu ion-list ion-item.item p {
         color: #aaa; }
-      ion-side-menu.menu  ion-list ion-item.item a.item-content,
-      ion-side-menu.menu  ion-list ion-item.item.active a.item-content {
+      ion-side-menus ion-side-menu.menu ion-list ion-item.item a.item-content,
+      ion-side-menus ion-side-menu.menu ion-list ion-item.item.active a.item-content {
         background: none; }
-      ion-side-menu.menu  ion-list ion-item.item.heading-item {
+      ion-side-menus ion-side-menu.menu ion-list ion-item.item.heading-item {
         border-top: none; }
-        ion-side-menu.menu  ion-list ion-item.item.heading-item a.item-content {
+        ion-side-menus ion-side-menu.menu ion-list ion-item.item.heading-item a.item-content {
           padding: 20px 0;
           text-align: center; }
-          ion-side-menu.menu  ion-list ion-item.item.heading-item a.item-content h1 {
+          ion-side-menus ion-side-menu.menu ion-list ion-item.item.heading-item a.item-content h1 {
             margin-bottom: 5px; }
-          ion-side-menu.menu  ion-list ion-item.item.heading-item a.item-content img.user-image {
+          ion-side-menus ion-side-menu.menu ion-list ion-item.item.heading-item a.item-content img.user-image {
             border-radius: 100px;
             margin: 0 auto;
             display: block; }
-      ion-side-menu.menu  ion-list ion-item.item a.item-content .menu-icon.icon  {
+      ion-side-menus ion-side-menu.menu ion-list ion-item.item a.item-content .menu-icon.icon {
         color: #ddd;
         font-size: 24px; }
 
-ion-side-menu-content ion-header-bar span.nav-bar-title {
+ion-side-menus ion-side-menu-content ion-header-bar span.nav-bar-title {
   display: block;
   height: 100%; }
-  ion-side-menu-content ion-header-bar span.nav-bar-title img {
+  ion-side-menus ion-side-menu-content ion-header-bar span.nav-bar-title img {
     height: 100%;
     padding: 4px 0; }
 
@@ -148,21 +162,71 @@ ion-side-menu-content ion-header-bar span.nav-bar-title {
   width: 100%;
   height: 100%; }
 
-ion-content {
+ion-side-menus ion-side-menu-content ion-nav-view ion-view ion-content {
   background-image: url("../img/bg_pattern.png");
   padding-top: 16px !important; }
-  ion-content.has-tabs-top {
+  ion-side-menus ion-side-menu-content ion-nav-view ion-view ion-content.has-tabs-top {
     top: 79px; }
-  ion-content .content-header {
+  ion-side-menus ion-side-menu-content ion-nav-view ion-view ion-content.has-header {
+    top: 45px; }
+  ion-side-menus ion-side-menu-content ion-nav-view ion-view ion-content .content-header {
     margin-top: -16px;
     padding: 16px 32px;
     background: #252222;
     margin-bottom: 16px;
-    text-align: center; }
-    ion-content .content-header .timer {
+    text-align: center;
+    position: relative; }
+    ion-side-menus ion-side-menu-content ion-nav-view ion-view ion-content .content-header .category-tag {
+      display: inline-block;
+      text-align: center;
+      font-size: 0.8em;
+      padding: 5px 7px;
+      text-transform: uppercase;
+      transform: rotate(90deg);
+      transform-origin: left bottom 0;
+      position: absolute;
+      top: -23px;
+      right: -30px; }
+      ion-side-menus ion-side-menu-content ion-nav-view ion-view ion-content .content-header .category-tag.magenta {
+        background-color: #bd03ae; }
+        ion-side-menus ion-side-menu-content ion-nav-view ion-view ion-content .content-header .category-tag.magenta::before {
+          border-color: #bd03ae transparent transparent #bd03ae; }
+        ion-side-menus ion-side-menu-content ion-nav-view ion-view ion-content .content-header .category-tag.magenta::after {
+          border-color: transparent transparent #bd03ae #bd03ae; }
+      ion-side-menus ion-side-menu-content ion-nav-view ion-view ion-content .content-header .category-tag.music {
+        background-color: #e4a101; }
+        ion-side-menus ion-side-menu-content ion-nav-view ion-view ion-content .content-header .category-tag.music::before {
+          border-color: #e4a101 transparent transparent #e4a101; }
+        ion-side-menus ion-side-menu-content ion-nav-view ion-view ion-content .content-header .category-tag.music::after {
+          border-color: transparent transparent #e4a101 #e4a101; }
+      ion-side-menus ion-side-menu-content ion-nav-view ion-view ion-content .content-header .category-tag.sport {
+        background-color: #08b8ba; }
+        ion-side-menus ion-side-menu-content ion-nav-view ion-view ion-content .content-header .category-tag.sport::before {
+          border-color: #08b8ba transparent transparent #08b8ba; }
+        ion-side-menus ion-side-menu-content ion-nav-view ion-view ion-content .content-header .category-tag.sport::after {
+          border-color: transparent transparent #08b8ba #08b8ba; }
+      ion-side-menus ion-side-menu-content ion-nav-view ion-view ion-content .content-header .category-tag.green {
+        background-color: #10bc45; }
+        ion-side-menus ion-side-menu-content ion-nav-view ion-view ion-content .content-header .category-tag.green::before {
+          border-color: #10bc45 transparent transparent #10bc45; }
+        ion-side-menus ion-side-menu-content ion-nav-view ion-view ion-content .content-header .category-tag.green::after {
+          border-color: transparent transparent #10bc45 #10bc45; }
+      ion-side-menus ion-side-menu-content ion-nav-view ion-view ion-content .content-header .category-tag::before, ion-side-menus ion-side-menu-content ion-nav-view ion-view ion-content .content-header .category-tag::after {
+        content: '';
+        display: block;
+        position: absolute;
+        border: 6px solid #e4a101;
+        right: -12px; }
+      ion-side-menus ion-side-menu-content ion-nav-view ion-view ion-content .content-header .category-tag::before {
+        top: 0; }
+      ion-side-menus ion-side-menu-content ion-nav-view ion-view ion-content .content-header .category-tag::after {
+        bottom: 0; }
+      ion-side-menus ion-side-menu-content ion-nav-view ion-view ion-content .content-header .category-tag .icon::before {
+        margin-right: 5px; }
+    ion-side-menus ion-side-menu-content ion-nav-view ion-view ion-content .content-header .timer {
       width: 270px;
       margin: 0 auto 16px; }
-      ion-content .content-header .timer .circle {
+      ion-side-menus ion-side-menu-content ion-nav-view ion-view ion-content .content-header .timer .circle {
         height: 70px;
         width: 70px;
         padding: 2px;
@@ -171,112 +235,88 @@ ion-content {
         background-image: -moz-linear-gradient(left, #bd03ae 0%, #e4a101 33%, #08b8ba 66%, #10bc45 100%);
         background-image: -webkit-linear-gradient(left, #bd03ae 0%, #e4a101 33%, #08b8ba 66%, #10bc45 100%);
         background-image: linear-gradient(to right, #bd03ae 0%, #e4a101 33%, #08b8ba 66%, #10bc45 100%); }
-        ion-content .content-header .timer .circle:not(:last-child) {
+        ion-side-menus ion-side-menu-content ion-nav-view ion-view ion-content .content-header .timer .circle:not(:last-child) {
           margin-right: 30px; }
-        ion-content .content-header .timer .circle .inside {
+        ion-side-menus ion-side-menu-content ion-nav-view ion-view ion-content .content-header .timer .circle .inside {
           height: 100%;
           background-color: #252222;
           border-radius: 35px;
           text-transform: uppercase;
           text-align: center;
           position: relative; }
-          ion-content .content-header .timer .circle .inside .value {
+          ion-side-menus ion-side-menu-content ion-nav-view ion-view ion-content .content-header .timer .circle .inside .value {
             color: #ddd;
             font-size: 1.9em;
             position: relative;
             top: 22%; }
-          ion-content .content-header .timer .circle .inside .label {
+          ion-side-menus ion-side-menu-content ion-nav-view ion-view ion-content .content-header .timer .circle .inside .label {
             color: #888;
             font-size: 0.5em;
             font-weight: bold;
             position: relative;
             top: 26%; }
-    ion-content .content-header .title {
+    ion-side-menus ion-side-menu-content ion-nav-view ion-view ion-content .content-header .title {
       text-transform: uppercase;
       font-size: 1.5em;
       white-space: normal;
       margin-bottom: 16px; }
-    ion-content .content-header .category-tag {
-      display: inline-block;
-      text-align: center;
-      font-size: 0.8em;
-      border-width: 1px;
-      border-style: solid;
-      border-radius: 5px;
-      padding: 5px 7px;
-      text-transform: uppercase;
-      margin-bottom: 10px; }
-      ion-content .content-header .category-tag.magenta {
-        color: #bd03ae;
-        border-color: #bd03ae; }
-      ion-content .content-header .category-tag.orange {
-        color: #e4a101;
-        border-color: #e4a101; }
-      ion-content .content-header .category-tag.cyan {
-        color: #08b8ba;
-        border-color: #08b8ba; }
-      ion-content .content-header .category-tag.green {
-        color: #10bc45;
-        border-color: #10bc45; }
-      ion-content .content-header .category-tag::before {
-        margin-right: 5px; }
-    ion-content .content-header .button-wrapper .button {
+    ion-side-menus ion-side-menu-content ion-nav-view ion-view ion-content .content-header .button-wrapper .button {
       display: block;
       width: 46%; }
-      ion-content .content-header .button-wrapper .button:first-child {
+      ion-side-menus ion-side-menu-content ion-nav-view ion-view ion-content .content-header .button-wrapper .button:first-child {
         float: left; }
-      ion-content .content-header .button-wrapper .button:last-child {
+      ion-side-menus ion-side-menu-content ion-nav-view ion-view ion-content .content-header .button-wrapper .button:last-child {
         float: right; }
-  ion-content .list .list-section-header {
+  ion-side-menus ion-side-menu-content ion-nav-view ion-view ion-content .list .list-section-header {
     display: block;
     background-color: #181616;
     margin-bottom: 15px;
     text-transform: uppercase;
     padding: 10px 15px; }
-    ion-content .list .list-section-header i.icon {
+    ion-side-menus ion-side-menu-content ion-nav-view ion-view ion-content .list .list-section-header i.icon {
       color: #05a48f;
       font-size: 1.5em;
       margin-right: 5px; }
-    ion-content .list .list-section-header span.label {
+    ion-side-menus ion-side-menu-content ion-nav-view ion-view ion-content .list .list-section-header span.label {
       position: relative;
       font-size: 0.8em;
       top: -4px; }
-  ion-content .list .card {
+  ion-side-menus ion-side-menu-content ion-nav-view ion-view ion-content .list .card {
     background-color: #252222;
     margin: 0 15px 15px;
     border-radius: 0 0 5px 5px; }
-    ion-content .list .card .item {
+    ion-side-menus ion-side-menu-content ion-nav-view ion-view ion-content .list .card .item {
       background: none;
       border: none; }
-      ion-content .list .card .item.user-info-container {
+      ion-side-menus ion-side-menu-content ion-nav-view ion-view ion-content .list .card .item.user-info-container {
         color: #919191;
         font-size: 0.9em;
         padding-left: 82px;
         min-height: 50px; }
-        ion-content .list .card .item.user-info-container img.user-image {
+        ion-side-menus ion-side-menu-content ion-nav-view ion-view ion-content .list .card .item.user-info-container img.user-image {
           border-radius: 50px;
           border: 2px solid #05a48f;
           width: 35px;
           position: absolute;
           left: 16px;
           top: 7px; }
-        ion-content .list .card .item.user-info-container span.user-name-label {
+        ion-side-menus ion-side-menu-content ion-nav-view ion-view ion-content .list .card .item.user-info-container span.user-name-label {
           font-style: italic; }
-        ion-content .list .card .item.user-info-container span.user-name {
+        ion-side-menus ion-side-menu-content ion-nav-view ion-view ion-content .list .card .item.user-info-container span.user-name {
           color: #05a48f;
           font-family: "open_sansbold", "-apple-system", "Helvetica Neue", "Roboto", "Segoe UI", sans-serif; }
-        ion-content .list .card .item.user-info-container div.datetime {
+        ion-side-menus ion-side-menu-content ion-nav-view ion-view ion-content .list .card .item.user-info-container div.datetime {
           margin: 10px 0 4px; }
-        ion-content .list .card .item.user-info-container div.datetime, ion-content .list .card .item.user-info-container span.counter {
+        ion-side-menus ion-side-menu-content ion-nav-view ion-view ion-content .list .card .item.user-info-container div.datetime, ion-side-menus ion-side-menu-content ion-nav-view ion-view ion-content .list .card .item.user-info-container span.counter {
           font-style: italic;
           font-size: 0.8em; }
-        ion-content .list .card .item.user-info-container span.counter {
+        ion-side-menus ion-side-menu-content ion-nav-view ion-view ion-content .list .card .item.user-info-container span.counter {
           margin-right: 10px; }
-          ion-content .list .card .item.user-info-container span.counter::before {
+          ion-side-menus ion-side-menu-content ion-nav-view ion-view ion-content .list .card .item.user-info-container span.counter::before {
             margin-right: 4px; }
-    ion-content .list .card .button-bar {
+    ion-side-menus ion-side-menu-content ion-nav-view ion-view ion-content .list .card .button-bar {
       border-top: 1px solid #353131; }
-      ion-content .list .card .button-bar button {
+      ion-side-menus ion-side-menu-content ion-nav-view ion-view ion-content .list .card .button-bar button {
         height: 35px;
         width: 33.333333%;
         color: #ddd;
@@ -284,22 +324,22 @@ ion-content {
         transition: background-color 0.1s ease, color 0.1s ease;
         background-color: #252222;
         border: none; }
-        ion-content .list .card .button-bar button.like-action span::before {
+        ion-side-menus ion-side-menu-content ion-nav-view ion-view ion-content .list .card .button-bar button.like-action span::before {
           color: #bd03ae; }
-        ion-content .list .card .button-bar button.comment-action span::before {
+        ion-side-menus ion-side-menu-content ion-nav-view ion-view ion-content .list .card .button-bar button.comment-action span::before {
           color: #e4a101; }
-        ion-content .list .card .button-bar button.share-action span::before {
+        ion-side-menus ion-side-menu-content ion-nav-view ion-view ion-content .list .card .button-bar button.share-action span::before {
           color: #08b8ba; }
-        ion-content .list .card .button-bar button.activated {
+        ion-side-menus ion-side-menu-content ion-nav-view ion-view ion-content .list .card .button-bar button.activated {
           background-color: #2a2727;
           border: none; }
-        ion-content .list .card .button-bar button span::before {
+        ion-side-menus ion-side-menu-content ion-nav-view ion-view ion-content .list .card .button-bar button span::before {
           margin-right: 6px;
           font-size: 1.5em;
           position: relative;
           top: 2px; }
 
-ion-content .content-header .timer:after, ion-content .content-header .button-wrapper:after {
+ion-side-menus ion-side-menu-content ion-nav-view ion-view ion-content .content-header .timer:after, ion-side-menus ion-side-menu-content ion-nav-view ion-view ion-content .content-header .button-wrapper:after {
   content: "";
   display: table;
   clear: both; }

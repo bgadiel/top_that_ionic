@@ -64,4 +64,18 @@
 		}
 	}
 
+	&.button-transparent {
+		background-color: rgba(0,0,0,0);
+		color: $base-color;
+		border-color: #777;
+		&.activated {
+			background-color: rgba(255, 255, 255, 0.05);
+			color: $base-color;
+			border-color: #aaa;
+		}
+		&:hover {
+			color: $base-color;
+		}
+	}
+
 }

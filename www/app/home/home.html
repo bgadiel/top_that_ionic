@@ -5,6 +5,11 @@
   <ion-content has-bouncing="false">
     <div class="contest-container" collection-repeat="contest in vm.contests" item-height="600">
       <div class="content-header">
+
+        <div class="category-tag {{contest.category}}">
+          <span class="icon ion-ios-musical-notes">{{contest.category}}</span>
+        </div>
+
         <div class="timer">
           <div class="circle">
             <div class="inside">
@@ -25,8 +30,6 @@
             </div>
           </div>
         </div>
-
-        <div class="category-tag orange icon ion-ios-musical-notes">{{contest.category}}</div>
 
         <h2 class="title">{{contest.title}}</h2>
 
