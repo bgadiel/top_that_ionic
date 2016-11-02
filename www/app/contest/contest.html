@@ -1,8 +1,12 @@
 <ion-view>
-  <ion-nav-buttons side="secondary">
-    <button class="button button-large ion-ios-location" ng-click="vm.doSomething()">
-    </button>
-  </ion-nav-buttons>
+  <!-- Second Phase -->
+  <!--<ion-nav-buttons side="secondary">-->
+    <!--<button class="button button-large ion-ios-location" ng-click="vm.doSomething()">-->
+    <!--</button>-->
+  <!--</ion-nav-buttons>-->
+  <ion-nav-title>
+    <img src="img/logo.png">
+  </ion-nav-title>
   <ion-content has-bouncing="false" overflow-scroll="true">
     <div class="contest-container" item-height="600">
       <div class="content-header">
@@ -26,7 +30,6 @@
             </div>
           </div>
         </div>
-
         <div class="category-tag orange icon ion-ios-musical-notes">{{vm.contest.category}}</div>
 
         <h2 class="title">{{vm.contest.title}}</h2>
@@ -60,25 +63,25 @@
             </div>
             <div class="button-bar">
               <button class="like-action pressed">
-                <span class="icon ion-heart"><span class="value"></span>33</span>
+                <span class="icon ion-heart"><span class="value">33</span></span>
               </button>
               <button class="comment-action">
-                <span class="icon ion-chatbubble"><span class="value"></span>233</span>
+                <span class="icon ion-chatbubble"><span class="value">233</span></span>
               </button>
               <button class="share-action">
-                <span class="icon ion-android-share-alt"><span class="value"></span>323</span>
+                <span class="icon ion-android-share-alt"><span class="value">323</span></span>
               </button>
             </div>
 
-            <ion-content overflow-scroll="true">
-              <div class="user-comments-container">
-                <div class="row" collection-repeat="comment in video.comments" item-width="33%" item-height="200px">
-                  <img class="user-image" src="{{comment.user.image_url}}" alt="">
-                  <span class="user-name">{{comment.user.user_name}}</span>
-                  <span class="user-comment"> {{comment.text}} </span>
-                </div>
-              </div>
-            </ion-content>
+            <!--<ion-content overflow-scroll="true">-->
+              <!--<div class="user-comments-container">-->
+                <!--<div class="row" collection-repeat="comment in video.comments" item-width="33%" item-height="200px">-->
+                  <!--<img class="user-image" src="{{comment.user.image_url}}" alt="">-->
+                  <!--<span class="user-name">{{comment.user.user_name}}</span>-->
+                  <!--<span class="user-comment"> {{comment.text}} </span>-->
+                <!--</div>-->
+              <!--</div>-->
+            <!--</ion-content>-->
           </div>
         </div>
       </div>

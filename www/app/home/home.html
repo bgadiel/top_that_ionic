@@ -3,13 +3,11 @@
     <img src="img/logo.png">
   </ion-nav-title>
   <ion-content has-bouncing="false">
-    <div class="contest-container" collection-repeat="contest in vm.contests" item-height="600">
+    <div class="contests-container" collection-repeat="contest in vm.contests" item-height="600">
       <div class="content-header">
-
         <div class="category-tag {{contest.category}}">
           <span class="icon ion-ios-musical-notes">{{contest.category}}</span>
         </div>
-
         <div class="timer">
           <div class="circle">
             <div class="inside">
@@ -46,7 +44,6 @@
           <!--<span class="label">Latest Video</span>-->
           <!--</div>-->
           <div class="card">
-
             <div class="item user-info-container">
               <img class="user-image" src="{{contest.videos[0].user.image_url}}" alt="">
                 <span class="user-name-label">by </span>
@@ -64,13 +61,13 @@
             </div>
             <div class="button-bar">
               <button class="like-action pressed">
-                <span class="icon ion-heart"><span class="value"></span>33</span>
+                <span class="icon ion-heart"><span class="value">33</span></span>
               </button>
               <button class="comment-action">
-                <span class="icon ion-chatbubble"><span class="value"></span>233</span>
+                <span class="icon ion-chatbubble"><span class="value">233</span></span>
               </button>
               <button class="share-action">
-                <span class="icon ion-android-share-alt"><span class="value"></span>323</span>
+                <span class="icon ion-android-share-alt"><span class="value">323</span></span>
               </button>
             </div>
           </div>

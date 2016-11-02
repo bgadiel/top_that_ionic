@@ -3,17 +3,17 @@
     <ion-content has-bouncing="false" scroll="false" class="menu-outer">
       <div class="menu-top-options">
         <ion-list>
-          <ion-item class="heading-item" menu-close ui-sref="app.home.main">
+          <ion-item class="heading-item" menu-close ui-sref="app.home">
             <!-- We need a wrapper with width set for the preload image directive -->
             <img class="user-image" ng-src="img/face-8.jpg">
             <h1 class="greeting">João</h1>
             <p class="message">@joaomnb</p>
           </ion-item>
-          <ion-item ui-sref-active="active" class="item-icon-left" menu-close ui-sref="app.home.main">
+          <ion-item ui-sref-active="active" class="item-icon-left" menu-close ui-sref="app.home">
             <i class="menu-icon icon ion-home"></i>
             <h2 class="menu-text">Messages</h2>
           </ion-item>
-          <ion-item ui-sref-active="active" class="item-icon-left" menu-close ui-sref="app.home.main">
+          <ion-item ui-sref-active="active" class="item-icon-left" menu-close ui-sref="app.home">
             <i class="menu-icon icon ion-android-search"></i>
             <h2 class="menu-text">My Movies</h2>
           </ion-item>
@@ -21,11 +21,11 @@
       </div>
       <div class="menu-bottom-options">
         <ion-list>
-          <ion-item ui-sref-active="active" class="item-icon-left" menu-close ui-sref="app.home.main">
+          <ion-item ui-sref-active="active" class="item-icon-left" menu-close ui-sref="app.home">
             <i class="menu-icon icon ion-ios-settings-strong"></i>
             <h2 class="menu-text">Settings</h2>
           </ion-item>
-          <ion-item ui-sref-active="active" class="item-icon-left" menu-close ui-sref="app.home.main">
+          <ion-item ui-sref-active="active" class="item-icon-left" menu-close ui-sref="app.home">
             <i class="menu-icon icon ion-android-call"></i>
             <h2 class="menu-text">Contact Us</h2>
           </ion-item>
@@ -38,10 +38,10 @@
   </ion-side-menu>
 
   <ion-side-menu-content>
-    <ion-nav-bar class="bar-dark">
+    <ion-nav-bar class="bar-dark" align-title="center">
 
-      <ion-nav-back-button>
-      </ion-nav-back-button>
+      <!--<ion-nav-back-button>-->
+      <!--</ion-nav-back-button>-->
 
       <ion-nav-buttons side="left">
         <button class="button button-icon button-clear ion-ios-gear" menu-toggle="left">
@@ -85,19 +85,22 @@
     <ion-content has-bouncing="false" scroll="false" class="menu-outer">
       <div class="menu-top-options">
         <ion-list>
-          <ion-item ui-sref-active="active" menu-close ui-sref="app.home.main">
+          <ion-item ui-sref-active="active" menu-close ui-sref="app.home">
             <h2 class="menu-text">Cat1</h2>
           </ion-item>
-          <ion-item ui-sref-active="active" menu-close ui-sref="app.home.main">
+          <ion-item ui-sref-active="active" menu-close ui-sref="app.home">
             <h2 class="menu-text">Cat2</h2>
           </ion-item>
         </ion-list>
       </div>
         <ion-list>
-          <ion-item ui-sref-active="active" class="item-icon-right" menu-close ui-sref="app.home.main">
-            <i class="menu-icon icon ion-plus-circled"></i>
-            <h2 class="menu-text">Create New Contest</h2>
-          </ion-item>
+          <button class="button button-block button-transparent ion-plus-circled" class="item-icon-right" menu-close ui-sref="app.newcontest">
+            Add New Contest
+          </button>
+          <!--<ion-item ui-sref-active="active" >            -->
+            <!--<i class="menu-icon icon "></i>-->
+            <!--<h2 class="menu-text"></h2>-->
+          <!--</ion-item>-->
         </ion-list>
     </ion-content>
   </ion-side-menu>

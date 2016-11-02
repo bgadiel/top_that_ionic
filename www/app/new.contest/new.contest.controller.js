@@ -1,21 +1,18 @@
 /**
- * Created by gadi on 25/10/2016.
+ * Created by gadi on 02/11/2016.
  */
-angular.module('topthat.contest', ['ionic'])
-  .controller('ContestController', ContestController);
+angular.module('topthat.new.contest', ['ionic'])
+  .controller('NewContestController', NewContestController);
 
-ContestController.$inject = ['$scope', '$ionicModal', '$timeout', '$stateParams'];
+NewContestController.$inject = ['$scope', '$ionicModal', '$timeout', '$stateParams'];
 
 /* @ngInject */
-function ContestController($scope, $ionicModal, $timeout, $stateParams) {
+function NewContestController($scope, $ionicModal, $timeout, $stateParams) {
   var vm = this;
 
   // $scope.$on('$ionicView.beforeEnter', function (event, viewData) {
   //   viewData.enableBack = true;
   // });
-
-  // get the id
-  vm.id = $stateParams.contestID;
 
   vm.contest =
   {

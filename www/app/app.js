@@ -4,16 +4,7 @@
 (function () {
   'use strict';
 
-   angular.module('topthat', ['ionic', 'topthat.home', 'topthat.contest'])
-  //   .controller('AppController', function($scope) {
-  //     //var vm = this;
-  //     $scope.isShowCat = false;
-  //
-  //     $scope.toggleGroup = function() {
-  //       $scope.isShowCat = $scope.isShowCat === false ? true : false;
-  //     };
-  //
-  //   })
+   angular.module('topthat', ['ionic', 'topthat.home', 'topthat.contest', 'topthat.new.contest'])
 
     .run(function($ionicPlatform) {
       $ionicPlatform.ready(function() {

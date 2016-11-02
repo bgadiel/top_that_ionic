@@ -46,8 +46,7 @@ angular.module('topthat.contest')
         }
       });
 
-
-      // .state('app.contest.details', {
+    // .state('app.contest.details', {
       //   url: '/home/:contestID',
       //     views: {
       //       'first-round-tab': {
@@ -67,10 +66,6 @@ angular.module('topthat.contest')
       //       }
       //     }
       // });
-
-
-
-
 
     // .state('app.featured_contest', {
     //   url: '/featured/:contestID',
