@@ -48,7 +48,7 @@
         </button>
       </ion-nav-buttons>
 
-      <ion-nav-title>
+      <ion-nav-title ui-sref="app.home">
         <img src="img/logo.png">
       </ion-nav-title>
 
@@ -64,17 +64,17 @@
     <!-- TABS -->
 
     <!--<ion-tabs class="tabs-dark tabs-icon-top">-->
-      <!--<ion-tab title="Featured" ui-sref="app.featured">-->
-        <!--<ion-nav-view name="featured-tab"></ion-nav-view>-->
-      <!--</ion-tab>-->
+    <!--<ion-tab title="Featured" ui-sref="app.featured">-->
+    <!--<ion-nav-view name="featured-tab"></ion-nav-view>-->
+    <!--</ion-tab>-->
 
-      <!--<ion-tab title="Newest" ui-sref="app.new">-->
-        <!--<ion-nav-view name="new-tab"></ion-nav-view>-->
-      <!--</ion-tab>-->
+    <!--<ion-tab title="Newest" ui-sref="app.new">-->
+    <!--<ion-nav-view name="new-tab"></ion-nav-view>-->
+    <!--</ion-tab>-->
 
-      <!--<ion-tab title="For You" ui-sref="app.trends">-->
-        <!--<ion-nav-view name="trends-tab"></ion-nav-view>-->
-      <!--</ion-tab>-->
+    <!--<ion-tab title="For You" ui-sref="app.trends">-->
+    <!--<ion-nav-view name="trends-tab"></ion-nav-view>-->
+    <!--</ion-tab>-->
     <!--</ion-tabs>-->
 
     <!-- END OF TABS -->
@@ -86,22 +86,35 @@
       <div class="menu-top-options">
         <ion-list>
           <ion-item ui-sref-active="active" menu-close ui-sref="app.home">
-            <h2 class="menu-text">Cat1</h2>
+            <h2 class="menu-text">Music Mania</h2>
           </ion-item>
           <ion-item ui-sref-active="active" menu-close ui-sref="app.home">
-            <h2 class="menu-text">Cat2</h2>
+            <h2 class="menu-text">Center Stage</h2>
+          </ion-item>
+          <ion-item ui-sref-active="active" menu-close ui-sref="app.home">
+            <h2 class="menu-text">Just Dance</h2>
+          </ion-item>
+          <ion-item ui-sref-active="active" menu-close ui-sref="app.home">
+            <h2 class="menu-text">Sportacular</h2>
+          </ion-item>
+          <ion-item ui-sref-active="active" menu-close ui-sref="app.home">
+            <h2 class="menu-text">For Fun</h2>
+          </ion-item>
+          <ion-item ui-sref-active="active" menu-close ui-sref="app.home">
+            <h2 class="menu-text">Kids’s Area</h2>
           </ion-item>
         </ion-list>
       </div>
-        <ion-list>
-          <button class="button button-block button-transparent ion-plus-circled" class="item-icon-right" menu-close ui-sref="app.newcontest">
-            Add New Contest
-          </button>
-          <!--<ion-item ui-sref-active="active" >            -->
-            <!--<i class="menu-icon icon "></i>-->
-            <!--<h2 class="menu-text"></h2>-->
-          <!--</ion-item>-->
-        </ion-list>
+      <ion-list>
+        <button class="button button-block button-transparent ion-plus-circled" class="item-icon-right" menu-close
+                ui-sref="app.newcontest">
+          Add New Contest
+        </button>
+        <!--<ion-item ui-sref-active="active" >            -->
+        <!--<i class="menu-icon icon "></i>-->
+        <!--<h2 class="menu-text"></h2>-->
+        <!--</ion-item>-->
+      </ion-list>
     </ion-content>
   </ion-side-menu>
 </ion-side-menus>

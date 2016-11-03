@@ -10,9 +10,9 @@ NewContestController.$inject = ['$scope', '$ionicModal', '$timeout', '$statePara
 function NewContestController($scope, $ionicModal, $timeout, $stateParams) {
   var vm = this;
 
-  // $scope.$on('$ionicView.beforeEnter', function (event, viewData) {
-  //   viewData.enableBack = true;
-  // });
+  $scope.$on('$ionicView.beforeEnter', function (event, viewData) {
+    viewData.enableBack = true;
+  });
 
   vm.contest =
   {

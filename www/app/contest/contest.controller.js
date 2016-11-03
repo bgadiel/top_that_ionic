@@ -4,10 +4,10 @@
 angular.module('topthat.contest', ['ionic'])
   .controller('ContestController', ContestController);
 
-ContestController.$inject = ['$scope', '$ionicModal', '$timeout', '$stateParams'];
+ContestController.$inject = ['$scope', '$ionicModal', '$timeout', '$stateParams', '$rootScope', '$state'];
 
 /* @ngInject */
-function ContestController($scope, $ionicModal, $timeout, $stateParams) {
+function ContestController($scope, $ionicModal, $timeout, $stateParams, $rootScope, $state) {
   var vm = this;
 
   $scope.$on('$ionicView.beforeEnter', function (event, viewData) {
@@ -376,4 +376,8 @@ function ContestController($scope, $ionicModal, $timeout, $stateParams) {
     //$scope.$on('$ionicView.enter', function(e) {
     //});
   }
+
+  $rootScope.$ionicGoBack = function(backCount) {
+    $state.go('app.home');
+  };
 }

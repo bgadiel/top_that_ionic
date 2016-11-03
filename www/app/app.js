@@ -25,6 +25,7 @@
     .config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
 
       $ionicConfigProvider.tabs.position('top'); //bottom
+      $ionicConfigProvider.backButton.text('').icon('ion-ios-arrow-back');
 
       $stateProvider
 
