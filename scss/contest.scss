@@ -1,3 +1,11 @@
 .contest-container {
   padding-top: 37px;
 }
+
+.popup-vertical-buttons .popup-buttons {
+  display: block;
+}
+.popup-vertical-buttons .popup-buttons .button{
+  display:block;
+  min-width: 100% !important;
+}

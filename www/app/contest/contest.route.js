@@ -14,7 +14,7 @@ angular.module('topthat.contest')
 
 
       .state('app.contest.first', {
-        url: "/first",
+        url: "/:contestID/first",
         views: {
           'first-round-tab': {
             templateUrl: 'app/contest/contest.html',
@@ -25,7 +25,7 @@ angular.module('topthat.contest')
       })
 
       .state('app.contest.semi', {
-        url: "/semi",
+        url: "/:contestID/semi",
         views: {
           'semifinals-tab': {
             templateUrl: 'app/contest/contest.html',
@@ -36,7 +36,7 @@ angular.module('topthat.contest')
       })
 
       .state('app.contest.finals', {
-        url: "/finals",
+        url: "/:contestID/finals",
         views: {
           'finals-tab': {
             templateUrl: 'app/contest/contest.html',

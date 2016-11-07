@@ -3,37 +3,26 @@
     <!--<button class="button button-icon button-clear ion-close-circled"></button>-->
   <!--</ion-nav-buttons>-->
   <ion-content has-bouncing="false" overflow-scroll="true">
-    <button class="button icon ion-close-circled"></button>
+    <button class="button icon ion-close-circled" ui-sref="app.home"></button>
 
     <div class="categories">
       <h1>New Contest</h1>
-      <div class="col text-left">
-        <h2>Music Mania</h2>
-      </div>
-      <div class="col text-right">
-        <h2>Center Stage</h2>
-      </div>
-      <div class="col text-left">
-        <h2>Just Dance</h2>
-      </div>
-      <div class="col text-right">
-        <h2>Sportacular</h2>
-      </div>
-      <div class="col text-left">
-        <h2>For Fun</h2>
-      </div>
-      <div class="col text-right">
-        <h2>Kids’s Area</h2>
-      </div>
+      <ion-list>
+        <ion-radio ng-value="'1'">Music Mania</ion-radio>
+        <ion-radio ng-value="'2'">Center Stage</ion-radio>
+        <ion-radio ng-value="'3'">Just Dance</ion-radio>
+        <ion-radio ng-value="'4'">Sportacular</ion-radio>
+        <ion-radio ng-value="'5'">For Fun</ion-radio>
+        <ion-radio ng-value="'6'">Kids’ Area</ion-radio>
+      </ion-list>
     </div>
     <div class="contest_title">
       <label class="item item-input">
-        <input type="text" placeholder="Title">
+        <input type="text" placeholder="Title" ng-model="vm.contestTitle">
       </label>
     </div>
-
     <div class="padding">
-      <button class="button button-block button-positive">Go!</button>
+      <button class="button button-block button-positive" ng-click="vm.newContestConfirm()">Go!</button>
     </div>
   </ion-content>
 </ion-view>
