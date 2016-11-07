@@ -25,7 +25,7 @@
     .config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
 
       $ionicConfigProvider.tabs.position('top'); //bottom
-      //$ionicConfigProvider.backButton.text('').icon('ion-ios-arrow-back'); // to remove 'back' title from back button
+      $ionicConfigProvider.backButton.text('').icon('ion-ios-arrow-back'); // to remove 'back' title from back button
 
       $stateProvider
 

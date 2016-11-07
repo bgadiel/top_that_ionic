@@ -12,7 +12,6 @@ angular.module('topthat.contest')
         templateUrl: 'app/contest/contestTabs.html',
       })
 
-
       .state('app.contest.first', {
         url: "/:contestID/first",
         views: {

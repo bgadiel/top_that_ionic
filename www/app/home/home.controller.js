@@ -7,6 +7,10 @@
   function HomeController($scope, $ionicModal, $timeout) {
     var vm = this;
 
+    $scope.$on('$ionicView.beforeEnter', function (event, viewData) {
+      viewData.enableBack = false;
+    });
+
     // var videos = [
     //   [
     //     {

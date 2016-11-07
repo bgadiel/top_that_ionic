@@ -49,21 +49,23 @@ function NewContestController($scope, $ionicModal, $timeout, $stateParams, $ioni
           //e.preventDefault();
           return 'contest';
         }
-      }, {
-        text: 'Share',
-        type: 'button button-block button-positive',
-        onTap: function (e) {
-          // Returning a value will cause the promise to resolve with the given value.
-          return 'share';
-        }
-      }, {
-        text: 'Main Page',
-        type: 'button button-block button-positive',
-        onTap: function (e) {
-          // Returning a value will cause the promise to resolve with the given value.
-          return 'home';
-        }
-      }]
+      },
+        //   {
+        //   text: 'Invite your friends',
+        //   type: 'button button-block button-positive',
+        //   onTap: function (e) {
+        //     // Returning a value will cause the promise to resolve with the given value.
+        //     return 'share';
+        //   }
+        // },
+        {
+          text: 'Home Page',
+          type: 'button button-block button-positive',
+          onTap: function (e) {
+            // Returning a value will cause the promise to resolve with the given value.
+            return 'home';
+          }
+        }]
     });
 
     confirmPopup.then(function (res) {

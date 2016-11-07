@@ -1,10 +1,6 @@
 <ion-view hide-nav-bar="true">
-  <!--<ion-nav-buttons side="right">-->
-    <!--<button class="button button-icon button-clear ion-close-circled"></button>-->
-  <!--</ion-nav-buttons>-->
   <ion-content has-bouncing="false" overflow-scroll="true">
     <button class="button icon ion-close-circled" ui-sref="app.home"></button>
-
     <div class="categories">
       <h1>New Contest</h1>
       <ion-list>
@@ -16,13 +12,8 @@
         <ion-radio ng-value="'6'">Kids’ Area</ion-radio>
       </ion-list>
     </div>
-    <div class="contest_title">
-      <label class="item item-input">
-        <input type="text" placeholder="Title" ng-model="vm.contestTitle">
-      </label>
-    </div>
     <div class="padding">
-      <button class="button button-block button-positive" ng-click="vm.newContestConfirm()">Go!</button>
+      <button class="button button-block button-positive" ui-sref="app.newstep2">Next</button>
     </div>
   </ion-content>
 </ion-view>
