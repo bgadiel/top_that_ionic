@@ -1,1 +1,14 @@
-<h3>some regions....</h3>
+<ion-modal-view>
+  <ion-header-bar>
+    <div class="buttons" ng-click="vm.closeModal()">
+      <i class="ion-arrow-left-c"></i> Back
+    </div>
+    <h1 class="title">Change Region</h1>
+  </ion-header-bar>
+  <ion-content has-bouncing="false" overflow-scroll="true">
+    <div class="contest-container" item-height="600">
+      <div class="category-tag orange icon ion-ios-musical-notes">{{vm.contest.category}}</div>
+      <h2 class="title">{{vm.contest.title}}</h2>
+    </div>
+  </ion-content>
+</ion-modal-view>

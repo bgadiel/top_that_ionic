@@ -9,7 +9,6 @@ ContestController.$inject = ['$scope', '$ionicModal', '$timeout', '$stateParams'
 /* @ngInject */
 function ContestController($scope, $ionicModal, $timeout, $stateParams, $rootScope, $state, $ionicPopup) {
   var vm = this;
-  vm.changeRegionModal = changeRegionModal;
 
   $scope.$on('$ionicView.beforeEnter', function (event, viewData) {
     viewData.enableBack = true;
@@ -378,46 +377,33 @@ function ContestController($scope, $ionicModal, $timeout, $stateParams, $rootSco
     //});
   }
 
-  $rootScope.$ionicGoBack = function(backCount) {
+  $rootScope.$ionicGoBack = function (backCount) {
     $state.go('app.home');
   };
 
-  function changeRegionModal(){
-    var confirmPopup = $ionicPopup.confirm({
-      title: 'Almost Done!', // String. The title of the popup
-      cssClass: 'popup-vertical-buttons', // String, The custom CSS class name
-      subTitle: 'We will reveiew the detais and will start in the next 24 hours',
-      templateUrl: 'app/new.contest/new.contest.modal.html',
-      scope: $scope,
-      buttons: [{ // Array[Object] (optional). Buttons to place in the popup footer.
-        text: 'Contest Page',
-        type: 'button button-block button-positive',
-        onTap: function (e) {
-          //e.preventDefault() will stop the popup from closing when tapped.
-          //e.preventDefault();
-          return 'contest';
-        }
-      },
-        {
-          text: 'Home Page',
-          type: 'button button-block button-positive',
-          onTap: function (e) {
-            // Returning a value will cause the promise to resolve with the given value.
-            return 'home';
-          }
-        }]
-    });
+  $ionicModal.fromTemplateUrl('app/contest/region.modal.html', {
+    scope: $scope,
+    animation: 'slide-in-up'
+  }).then(function (modal) {
+    vm.modal = modal;
+  });
 
-    confirmPopup.then(function (res) {
-      if (res === 'contest') {
-        $state.go('app.contest.first', { contestID: 111 });
-      }
-      if (res === 'share') {
-        $state.go('app.home');
-      }
-      if (res === 'home') {
-        $state.go('app.home');
-      }
-    });
-  }
+  vm.openModal = function() {
+    vm.modal.show();
+  };
+  vm.closeModal = function() {
+    vm.modal.hide();
+  };
+  // Cleanup the modal when we're done with it!
+  $scope.$on('$destroy', function() {
+    vm.modal.remove();
+  });
+  // Execute action on hide modal
+  $scope.$on('modal.hidden', function() {
+    // Execute action
+  });
+  // Execute action on remove modal
+  $scope.$on('modal.removed', function() {
+    // Execute action
+  });
 }
