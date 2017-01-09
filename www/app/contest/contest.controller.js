@@ -17,6 +17,13 @@ function ContestController($scope, $ionicModal, $timeout, $stateParams, $rootSco
   // get the id
   vm.id = $stateParams.contestID;
 
+  if (vm.id ==='222'){
+    vm.is_new = true;
+  }
+  else {
+    vm.is_new = false;
+  }
+
   vm.contest =
   {
     "id": "0",

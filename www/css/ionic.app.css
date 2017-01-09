@@ -17,6 +17,16 @@ $dark:                            #444 !default;
 */
 @import url(../fonts/opensans_regular_macroman/stylesheet.css);
 @import url(../fonts/opensans_bold_macroman/stylesheet.css);
+.contest-container {
+  padding-top: 37px; }
+
+.popup-vertical-buttons .popup-buttons {
+  display: block; }
+
+.popup-vertical-buttons .popup-buttons .button {
+  display: block;
+  min-width: 100% !important; }
+
 .button {
   min-height: 35px !important;
   line-height: 35px !important;

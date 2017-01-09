@@ -13,7 +13,7 @@
         <!--<div class="region">-->
           <!--<button class="button icon ion-location" ng-click="vm.openModal()">Tel Aviv</button>-->
         <!--</div>-->
-        <div class="timer">
+        <div ng-if="!vm.is_new" class="timer">
           <div class="circle">
             <div class="inside">
               <div class="value">2</div>
@@ -37,7 +37,7 @@
         <h2 class="title">{{vm.contest.title}}</h2>
         <button class="button button-accent button-block">UPLOAD</button>
       </div>
-      <div class="list" ng-if="vm.contest.videos.length > 0">
+      <div class="list" ng-if="!vm.is_new && vm.contest.videos.length > 0">
         <div class="list-section">
           <!--<div class="list-section-header">-->
           <!--<i class="icon ion-android-time"></i>-->
@@ -79,6 +79,11 @@
               <!--</div>-->
           </div>
         </div>
+      </div>
+      <div ng-if="vm.is_new">
+        <h3>The Contest Haven't Started Yet</h3>
+        <h4>In the meanwhile share it with your friends</h4>
+        <button class="button button-accent button-block">SHARE</button>
       </div>
     </div>
     </div>

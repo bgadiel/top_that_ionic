@@ -70,7 +70,7 @@ function NewContestController($scope, $ionicModal, $timeout, $stateParams, $ioni
 
     confirmPopup.then(function (res) {
       if (res === 'contest') {
-        $state.go('app.contest.first', { contestID: 111 });
+        $state.go('app.contest.first', { contestID: 222 });
       }
       if (res === 'share') {
         $state.go('app.home');
