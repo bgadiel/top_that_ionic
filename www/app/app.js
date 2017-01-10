@@ -4,7 +4,7 @@
 (function () {
   'use strict';
 
-   angular.module('topthat', ['ionic', 'topthat.home', 'topthat.contest', 'topthat.new.contest'])
+   angular.module('topthat', ['ionic', 'topthat.auth', 'topthat.home', 'topthat.contest', 'topthat.new.contest'])
 
     .run(function($ionicPlatform) {
       $ionicPlatform.ready(function() {
@@ -36,7 +36,7 @@
         });
 
       // if none of the above states are matched, use this as the fallback
-      $urlRouterProvider.otherwise('/app/home');
+      $urlRouterProvider.otherwise('/auth/welcome');
     });
 
 })();
