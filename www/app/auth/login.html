@@ -28,7 +28,7 @@
               <input type="password" placeholder="Password" name="password" ng-model="user.password" required show-hide-input>
             </label>
           </div>
-          <button type="submit" class="log-in button button-block" ng-click="doLogIn()" ng-disabled="login_form.$invalid">
+          <button type="submit" class="log-in button button-block" ng-click="vm.doLogIn()" ng-disabled="login_form.$invalid">
             Log In
           </button>
           <p ng-show="error" class="message error">{{error}}</p>

@@ -7,10 +7,10 @@
     </div>
     <div class="bottom-content row">
       <div class="col col-bottom">
-        <a class="google-sign-in button button-block icon-left ion-social-google" ng-click="googleSignIn()">
-          <span class="btn-copy">Google</span>
-        </a>
-        <a class="facebook-sign-in button button-block icon-left ion-social-facebook" ng-click="facebookSignIn()">
+        <!--<a class="google-sign-in button button-block icon-left ion-social-google" ng-click="vm.googleSignIn()">-->
+          <!--<span class="btn-copy">Google</span>-->
+        <!--</a>-->
+        <a class="facebook-sign-in button button-block icon-left ion-social-facebook" ng-click="vm.facebookSignIn()">
           <span class="btn-copy">Facebook</span>
         </a>
         <div class="row split-actions">
@@ -26,11 +26,11 @@
           </div>
         </div>
         <div class="other-options-outer">
-          <a ng-show="!show_hidden_actions" animation="'fade'" ng-click="toggleHiddenActions()" class="other-options button button-clear button-block">
+          <a ng-show="!show_hidden_actions" animation="'fade'" ng-click="vm.toggleHiddenActions()" class="other-options button button-clear button-block">
             Show more
           </a>
           <div ng-cloak ng-show="show_hidden_actions" animation="'fade'" class="hidden-actions ng-cloak ng-hide">
-            <a class="twitter-sign-in button button-block icon-left ion-social-twitter" ng-click="twitterSignIn()">
+            <a class="twitter-sign-in button button-block icon-left ion-social-twitter" ng-click="vm.twitterSignIn()">
               <span class="btn-copy">Twitter</span>
             </a>
           </div>

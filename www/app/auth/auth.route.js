@@ -19,6 +19,7 @@ angular.module('topthat.auth')
         url: '/welcome',
         templateUrl: "app/auth/welcome.html",
         controller: 'AuthController',
+        controllerAs: 'vm',
         resolve: {
           show_hidden_actions: function(){
             return false;
@@ -29,19 +30,22 @@ angular.module('topthat.auth')
       .state('auth.login', {
         url: '/login',
         templateUrl: "app/auth/login.html",
-        controller: 'AuthController'
+        controller: 'AuthController',
+        controllerAs: 'vm',
       })
 
       .state('auth.signup', {
         url: '/signup',
         templateUrl: "app/auth/signup.html",
-        controller: 'AuthController'
+        controller: 'AuthController',
+        controllerAs: 'vm',
       })
 
       .state('auth.forgot-password', {
         url: '/forgot-password',
         templateUrl: "app/auth/forgot-password.html",
-        controller: 'AuthController'
+        controller: 'AuthController',
+        controllerAs: 'vm',
       });
 
   });
