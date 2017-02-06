@@ -1,0 +1,116 @@
+.welcome-view {
+	.top-content {
+    height: 40%;
+
+		.app-copy {
+			text-align: center;
+			padding-top: 10vh;
+		}
+
+		.app-logo {
+			font-size: 50px;
+			font-family: cursive;
+			font-weight: 600;
+			font-style: italic;
+			color: #FFFFFF;
+		}
+	}
+
+	.bottom-content {
+    height: 60%;
+
+		.google-sign-in,
+		.facebook-sign-in,
+		.twitter-sign-in {
+			color: #FFF;
+			font-size: 18px;
+  		font-weight: 500;
+
+			&:before {
+				width: 30px;
+				text-align: center;
+				font-size: 32px;
+			}
+
+			.btn-copy {
+				margin-left: -(30px);
+			}
+		}
+
+		.google-sign-in {
+			background-color: #dd4c39;
+			border-color: rgba(darken(#dd4c39, 2), .9);
+		}
+
+		.facebook-sign-in {
+			background-color: #294886;
+			border-color: rgba(darken(#294886, 2), .9);
+		}
+
+		.twitter-sign-in {
+			background-color: #00a3dc;
+			border-color: rgba(darken(#00a3dc, 2), .9);
+		}
+
+		.split-actions {
+			padding: 0px;
+
+			.col {
+				padding-top: 0px;
+				padding-bottom: 0px;
+
+				&:first-child {
+					padding-left: 0px;
+				}
+
+				&:last-child {
+					padding-right: 0px;
+				}
+			}
+
+			.button-outline {
+				color: #FFFFFF;
+				border-color: #FFFFFF;
+				font-weight: 500;
+			}
+		}
+
+		.other-options-outer {
+			// Fix tabs animation on iOS
+			// Fix initial blink before angular loaded: http://stackoverflow.com/a/14076004/1116959
+			[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak
+			{
+				display: none !important;
+			}
+
+			// Fix animation (weird slide up/down effect)
+			.other-options.ng-hide,
+			.hidden-actions.ng-hide {
+				display: none !important;
+			}
+
+			.other-options.ng-hide-add.ng-hide-add-active,
+			.other-options.ng-hide-remove.ng-hide-remove-active
+			.hidden-actions.ng-hide-add.ng-hide-add-active,
+			.hidden-actions.ng-hide-remove.ng-hide-remove-active {
+				@include transition(all 0s ease);
+			}
+
+			.other-options {
+				color: #FFFFFF;
+			}
+		}
+
+		.legal-notice {
+			color: #FFFFFF;
+			margin: 10px 0px;
+			text-align: center;
+
+			a {
+				text-decoration: none;
+				font-weight: 600;
+				color: #FFFFFF;
+			}
+		}
+	}
+}

@@ -17,6 +17,8 @@ function AuthController($scope, $ionicModal, $timeout, $stateParams, $ionicPopup
 
   function activate(){}
 
-  function facebookSignIn(){}
+  function facebookSignIn(){
+    $state.go('app.home');
+  }
 
 }
