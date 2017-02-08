@@ -1,42 +1,32 @@
 <ion-view class="welcome-view" cache-view="false">
   <ion-content scroll="false">
-    <div class="top-content row">
-      <div class="app-copy col col-center">
-        <h1 class="app-logo">LOGO</h1>
-      </div>
+
+    <div class="header">
+      <img src="img/logo.png" alt="TopThat Logo"/>
     </div>
-    <div class="bottom-content row">
-      <div class="col col-bottom">
-        <!--<a class="google-sign-in button button-block icon-left ion-social-google" ng-click="vm.googleSignIn()">-->
-          <!--<span class="btn-copy">Google</span>-->
-        <!--</a>-->
-        <a class="facebook-sign-in button button-block icon-left ion-social-facebook" ng-click="vm.facebookSignIn()">
-          <span class="btn-copy">Facebook</span>
-        </a>
-        <div class="row split-actions">
-          <div class="col">
-            <a class="button button-block button-outline" ui-sref="auth.signup">
-              Sign Up
-            </a>
-          </div>
-          <div class="col">
-            <a class="button button-block button-outline"  ui-sref="auth.login">
-              Log In
-            </a>
-          </div>
+
+    <div class="main">
+
+      <div class="row">
+        <div class="col">
+          <a class="button button-block button-facebook" ng-click="vm.facebookSignIn()"><i class="icon ion-social-facebook"></i>Facebook</a>
         </div>
-        <div class="other-options-outer">
-          <a ng-show="!show_hidden_actions" animation="'fade'" ng-click="vm.toggleHiddenActions()" class="other-options button button-clear button-block">
-            Show more
-          </a>
-          <div ng-cloak ng-show="show_hidden_actions" animation="'fade'" class="hidden-actions ng-cloak ng-hide">
-            <a class="twitter-sign-in button button-block icon-left ion-social-twitter" ng-click="vm.twitterSignIn()">
-              <span class="btn-copy">Twitter</span>
-            </a>
-          </div>
-        </div>
-        <section ng-include="'app/auth/partials/legal-notice.html'"></section>
       </div>
+
+      <div class="row">
+        <div class="col">
+          <a class="button button-block button-transparent" ui-sref="auth.signup">Sign Up</a>
+        </div>
+        <div class="col">
+          <a class="button button-block button-transparent" ui-sref="auth.login">Log In</a>
+        </div>
+      </div>
+
     </div>
+
+    <div class="footer">
+      By signing up you agree to the <a ng-click="showTerms()">Terms of Service</a> and <a ng-click="showPrivacyPolicy()">Privacy Policy</a>.
+    </div>
+
   </ion-content>
 </ion-view>

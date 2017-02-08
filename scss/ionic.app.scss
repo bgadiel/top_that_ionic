@@ -23,6 +23,8 @@ $dark:                            #444 !default;
 @import "tabs.scss";
 @import "side_menu.scss";
 @import "main.scss";
+@import "auth.variables.scss";
+@import "auth.styles.scss";
 
 %clearfix {
 	&:after {

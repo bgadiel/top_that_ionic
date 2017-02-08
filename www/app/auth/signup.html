@@ -1,19 +1,11 @@
 <ion-view class="auth-view" cache-view="false">
+
   <ion-nav-bar class="view-navigation">
-    <ion-nav-back-button>
-    </ion-nav-back-button>
-    <ion-nav-title>
-      <span>Sign Up with Email</span>
-    </ion-nav-title>
+    <ion-nav-back-button></ion-nav-back-button>
+    <ion-nav-title>Sign Up</ion-nav-title>
   </ion-nav-bar>
-  <ion-content class="padding">
-    <div class="row related-navigation">
-      <div class="col">
-        <a class="nav-right button button-clear" ui-sref="auth.login">
-          Log In
-        </a>
-      </div>
-    </div>
+
+  <ion-content scroll="false">
     <div class="row form-wrapper">
       <div class="col">
         <form name="signup_form" class="" novalidate>
@@ -31,12 +23,11 @@
               <input type="text" placeholder="Last Name" name="last_name" ng-model="user.last_name" required>
             </label>
           </div>
-          <button type="submit" class="sign-up button button-block" ng-click="vm.doSignUp()" ng-disabled="signup_form.$invalid">
-            Sign Up
-          </button>
+          <button type="submit" class="sign-up button button-block button-accent" ng-click="vm.doSignUp()" ng-disabled="signup_form.$invalid">Sign Up</button>
           <p ng-show="error" class="message error">{{error}}</p>
         </form>
       </div>
     </div>
   </ion-content>
+
 </ion-view>
