@@ -7,8 +7,21 @@ var minifyCss = require('gulp-minify-css');
 var rename = require('gulp-rename');
 var sh = require('shelljs');
 var inject = require('gulp-inject');
-// var angularFilesort = require('gulp-angular-filesort');
-// var naturalSort = require('gulp-natural-sort');
+var wiredep = require('wiredep').stream;
+var bowerOptions = {
+  json: require('./bower.json'),
+  directory: './www/lib/',
+  ignorePath: '../..',
+  exclude: [
+    'www/lib/angular/angular.js',
+    'www/lib/angular-animate/angular-animate.js',
+    'www/lib/angular-sanitize/angular-sanitize.js',
+    'www/lib/angular-ui-router',
+    'www/lib/ionic',
+    'www/lib/jquery'
+  ],
+  overrides: {'tinymce-dist': {'main': ['tinymce.js', 'plugins/**/*.js', 'themes/**/*.js', 'skins/**/*.css']}}
+};
 
 var paths = {
   sass: ['./scss/**/*.scss'],
@@ -78,5 +91,20 @@ gulp.task('index', function(){
     .pipe(inject(
       gulp.src(paths.css,
         {read: false}), {relative: true}))
+    .pipe(gulp.dest('./www'));
+});
+
+gulp.task('wiredep', [], function() {
+  //console.log('Wiring the bower dependencies into the html');
+
+  return gulp
+    .src('./www/index.html')
+    .pipe(wiredep({
+      bowerJson: bowerOptions.json,
+      directory: bowerOptions.directory,
+      ignorePath: bowerOptions.ignorePath,
+      exclude: bowerOptions.exclude,
+      overrides: bowerOptions.overrides
+    }))
     .pipe(gulp.dest('./www'));
 });

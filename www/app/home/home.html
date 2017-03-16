@@ -2,8 +2,8 @@
   <ion-nav-title>
     <img src="img/logo.png">
   </ion-nav-title>
-  <ion-content has-bouncing="false">
-    <div class="contests-container" collection-repeat="contest in vm.contests" item-height="600">
+  <ion-content has-bouncing="false" overflow-scroll="true">
+    <div class="contests-container" collection-repeat="contest in vm.filteredContests" item-height="600">
       <div class="content-header">
         <div class="category-tag {{contest.category}}">
           <span class="icon ion-ios-musical-notes">{{contest.category}}</span>
@@ -43,34 +43,36 @@
           <!--<i class="icon ion-android-time"></i>-->
           <!--<span class="label">Latest Video</span>-->
           <!--</div>-->
-          <div class="card">
-            <div class="item user-info-container">
-              <img class="user-image" src="{{contest.videos[0].user.image_url}}" alt="">
-                <span class="user-name-label">by </span>
-                <span class="user-name">{{contest.videos[0].user.details.user_name}}</span>
-              <!--<div class="datetime">{{contest.videos[0].user.created_time}}</div>-->
-              <!--<span class="counter likes icon ion-heart">12 likes</span>-->
-              <!--<span class="counter comments icon ion-chatbubble">23 comments</span>-->
+          <ion-content overflow-scroll="true">
+            <div class="card" collection-repeat="video in contest">
+              <div class="item user-info-container">
+                <img class="user-image" src="{{video.user_image}}" alt="">
+                  <span class="user-name-label">by </span>
+                  <span class="user-name">{{video.user}}</span>
+                <!--<div class="datetime">{{contest.videos[0].user.created_time}}</div>-->
+                <!--<span class="counter likes icon ion-heart">12 likes</span>-->
+                <!--<span class="counter comments icon ion-chatbubble">23 comments</span>-->
+              </div>
+              <div class="item item-image">
+                <img src="img/video.png"/>
+                <!-- JOAO: Temporarily replaced the video with an image because of the scroll issue -->
+                <!--<div class="video-container">
+                  <iframe src="https://www.youtube.com/embed/wyVM1evRxNw" frameborder="0" allowfullscreen></iframe>
+                </div>-->
+              </div>
+              <div class="button-bar">
+                <button class="like-action pressed">
+                  <span class="icon ion-heart"><span class="value">{{video.like}}</span></span>
+                </button>
+                <button class="comment-action">
+                  <span class="icon ion-chatbubble"><span class="value">{{video.comments}}</span></span>
+                </button>
+                <button class="share-action">
+                  <span class="icon ion-android-share-alt"><span class="value">{{video.share}}</span></span>
+                </button>
+              </div>
             </div>
-            <div class="item item-image">
-              <img src="img/video.png"/>
-              <!-- JOAO: Temporarily replaced the video with an image because of the scroll issue -->
-              <!--<div class="video-container">
-                <iframe src="https://www.youtube.com/embed/wyVM1evRxNw" frameborder="0" allowfullscreen></iframe>
-              </div>-->
-            </div>
-            <div class="button-bar">
-              <button class="like-action pressed">
-                <span class="icon ion-heart"><span class="value">33</span></span>
-              </button>
-              <button class="comment-action">
-                <span class="icon ion-chatbubble"><span class="value">233</span></span>
-              </button>
-              <button class="share-action">
-                <span class="icon ion-android-share-alt"><span class="value">323</span></span>
-              </button>
-            </div>
-          </div>
+          </ion-content>
         </div>
       </div>
     </div>
