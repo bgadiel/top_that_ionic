@@ -2,8 +2,8 @@
   <ion-nav-title>
     <img src="img/logo.png">
   </ion-nav-title>
-  <ion-content has-bouncing="false" overflow-scroll="true">
-    <div class="contests-container" collection-repeat="contest in vm.filteredContests" item-height="600">
+  <ion-content has-bouncing="false">
+    <div class="contests-container" ng-repeat="contest in vm.contests" item-height="600">
       <div class="content-header">
         <div class="category-tag {{contest.category}}">
           <span class="icon ion-ios-musical-notes">{{contest.category}}</span>
@@ -43,8 +43,8 @@
           <!--<i class="icon ion-android-time"></i>-->
           <!--<span class="label">Latest Video</span>-->
           <!--</div>-->
-          <ion-content overflow-scroll="true">
-            <div class="card" collection-repeat="video in contest">
+
+            <div class="card" ng-repeat="video in vm.topVideosPerContests[$index]">
               <div class="item user-info-container">
                 <img class="user-image" src="{{video.user_image}}" alt="">
                   <span class="user-name-label">by </span>
@@ -72,7 +72,6 @@
                 </button>
               </div>
             </div>
-          </ion-content>
         </div>
       </div>
     </div>

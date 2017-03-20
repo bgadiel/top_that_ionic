@@ -6,6 +6,12 @@
   /* @ngInject */
   function HomeController($scope, $ionicModal, $timeout, $firebaseArray, firebaseDataService, toastr) {
     var vm = this;
+    var contestsRef = firebaseDataService.contests;
+    var usersRef = firebaseDataService.users;
+
+    vm.topVideosPerContests =[];
+
+    //vm.getTopVideo = getTopVideo;
 
     $scope.$on('$ionicView.beforeEnter', function (event, viewData) {
       viewData.enableBack = false;
@@ -23,30 +29,22 @@
       //$scope.$on('$ionicView.enter', function(e) {
       //});
 
-      var contestsRef = firebaseDataService.contests;
-      var usersRef = firebaseDataService.users;
-      var videosRef = firebaseDataService.videos;
-
       // download the data into a local object
-      vm.contests = $firebaseArray(contestsRef);      // synchronize the object with a three-way data binding
+      vm.contests = $firebaseArray(contestsRef.orderByChild("end_time"));      // synchronize the object with a three-way data binding
       vm.users = $firebaseArray(usersRef);      // synchronize the object with a three-way data binding
-      vm.videos = $firebaseArray(videosRef);     // synchronize the object with a three-way data binding
 
       vm.contests.$loaded()
         .then(function(x) {
           toastr.success('loaded!');
-          vm.filteredContests = $firebaseArray(contestsRef.orderByChild("end_time"));
+          insertTopVideos();
         })
         .catch(function(error) {
           toastr.error("Error:", error);
         });
 
       // contestsRef.on("value", function(snapshot) {
-      //   var key = snapshot.key;
-      //   var childKey = snapshot.val().users;
-      //   usersRef.child("users/" + childKey + "/name").once('value', function(snapshot) {
-      //     console.log("Mary is a member of this group: " + snapshot.val());
-      //   });
+      //   vm.contests = snapshot.val();
+      //   //insertTopVideos();
       // });
 
       // contestsRef.on("value", function(snapshot) {
@@ -70,6 +68,35 @@
       //     return snapshot.val();
       //   });
       // };
+    }
+
+
+    function insertTopVideos(){
+      // vm.contests.forEach(function(contest, index) {
+      //   var ref = firebase.database().ref("contests/" + contest.id +"/videos").orderByChild("like").limitToFirst(2);
+      //   ref.once("value").then(function(snapshot) {
+      //     vm.topVideosPerContests[index] = snapshot.val();
+      //     });
+      //
+      // });
+
+      contestsRef.once('value', function(snapshot) {
+        snapshot.forEach(function(contestSnapshot, index) {
+          var videos = contestSnapshot.val().videos;
+          var videosRef = contestSnapshot.child('videos').ref;
+          videosRef.orderByChild("like").limitToLast(2).once("value", function(snapshot) {
+            console.log(snapshot.val());
+            vm.topVideosPerContests.push(snapshot.val());
+          });
+        });
+      });
+
+
+        //.child('videos').orderByChild("share").limitToFirst(2).on("value", function(snapshot) {
+        //var vm.topVideosPerContests[contest.id]
+        //var x = snapshot.val;
+        //console.log(vm.topVideosPerContests);
+      //});
     }
   }
 
