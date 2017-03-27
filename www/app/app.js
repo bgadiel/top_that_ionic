@@ -4,11 +4,11 @@
 (function () {
   'use strict';
 
-   angular.module('topthat', ['ionic', 'firebase', 'toastr', 'topthat.core',
-     'topthat.auth', 'topthat.home', 'topthat.contest', 'topthat.new.contest'])
+  angular.module('topthat', ['ionic', 'firebase', 'toastr', 'topthat.core',
+    'topthat.auth', 'topthat.home', 'topthat.contest', 'topthat.new.contest'])
 
-    .run(function($ionicPlatform) {
-      $ionicPlatform.ready(function() {
+    .run(function ($ionicPlatform) {
+      $ionicPlatform.ready(function () {
         // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
         // for form inputs)
         if (window.cordova && window.cordova.plugins.Keyboard) {
@@ -23,21 +23,27 @@
       });
     })
 
-    .config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
+    .filter('reverse', function () {
+      return function (items) {
+        return items.slice().reverse();
+      };
+    })
 
-      $ionicConfigProvider.tabs.position('top'); //bottom
-      $ionicConfigProvider.backButton.text('').icon('ion-ios-arrow-back'); // to remove 'back' title from back button
+  .config(function ($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
 
-      $stateProvider
+    $ionicConfigProvider.tabs.position('top'); //bottom
+    $ionicConfigProvider.backButton.text('').icon('ion-ios-arrow-back'); // to remove 'back' title from back button
 
-        .state('app', {
-          url: "/app",
-          abstract: true,
-          templateUrl: 'app/layout/side-menu.html'
-        });
+    $stateProvider
 
-      // if none of the above states are matched, use this as the fallback
-      $urlRouterProvider.otherwise('/auth/welcome');
-    });
+      .state('app', {
+        url: "/app",
+        abstract: true,
+        templateUrl: 'app/layout/side-menu.html'
+      });
+
+    // if none of the above states are matched, use this as the fallback
+    $urlRouterProvider.otherwise('/auth/welcome');
+  });
 
 })();

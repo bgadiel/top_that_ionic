@@ -3,7 +3,7 @@
     <img src="img/logo.png">
   </ion-nav-title>
   <ion-content has-bouncing="false">
-    <div class="contests-container" ng-repeat="contest in vm.contests" item-height="600">
+    <div class="contests-container" ng-repeat="contest in vm.contests | reverse" item-height="600">
       <div class="content-header">
         <div class="category-tag {{contest.category}}">
           <span class="icon ion-ios-musical-notes">{{contest.category}}</span>
@@ -34,7 +34,7 @@
 
         <h2 class="title">{{contest.title}}</h2>
 
-        <button class="button button-black button-block" ui-sref="app.contest.first({ contestID: contest.id })">ENTER</button>
+        <button class="button button-black button-block" ui-sref="app.contest.first({ contestID: contest.id, stage: contest.stage })">ENTER</button>
 
       </div>
       <div class="list">
@@ -46,9 +46,9 @@
 
             <div class="card" ng-repeat="video in vm.topVideosPerContests[$index]">
               <div class="item user-info-container">
-                <img class="user-image" src="{{video.user_image}}" alt="">
+                <img class="user-image" src="{{::video.user_image}}" alt="">
                   <span class="user-name-label">by </span>
-                  <span class="user-name">{{video.user}}</span>
+                  <span class="user-name">{{::video.user}}</span>
                 <!--<div class="datetime">{{contest.videos[0].user.created_time}}</div>-->
                 <!--<span class="counter likes icon ion-heart">12 likes</span>-->
                 <!--<span class="counter comments icon ion-chatbubble">23 comments</span>-->

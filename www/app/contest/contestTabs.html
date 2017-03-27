@@ -1,13 +1,13 @@
 <ion-tabs class="tabs-dark tabs-icon-top">
-  <ion-tab title="First Round" ui-sref="app.contest.first">
+  <ion-tab title="First Round" ui-sref="app.contest.first({ contestID: vm.id })">
     <ion-nav-view name="first-round-tab"></ion-nav-view>
   </ion-tab>
 
-  <ion-tab title="Semifinals" ui-sref="app.contest.semi">
-    <ion-nav-view name="semifinals-tab"></ion-nav-view>
+  <ion-tab title="Semifinals" ui-sref="app.contest.semi({ contestID: vm.id })">
+    <ion-nav-view name="semi-finals-tab"></ion-nav-view>
   </ion-tab>
 
-  <ion-tab title="Finals" ui-sref="app.contest.finals">
+  <ion-tab title="Finals" ui-sref="app.contest.finals({ contestID: vm.id })">
     <ion-nav-view name="finals-tab"></ion-nav-view>
   </ion-tab>
 </ion-tabs>

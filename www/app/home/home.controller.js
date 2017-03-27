@@ -36,7 +36,7 @@
       vm.contests.$loaded()
         .then(function(x) {
           toastr.success('loaded!');
-          insertTopVideos();
+          filterTopVideos();
         })
         .catch(function(error) {
           toastr.error("Error:", error);
@@ -61,7 +61,6 @@
       //   });
       // });
 
-
       // vm.getUserByContest = function(uid) {
       //   usersRef.child(uid).once('value', function(snapshot) {
       //     console.log("Creator of this contest: " + snapshot.key);
@@ -70,8 +69,7 @@
       // };
     }
 
-
-    function insertTopVideos(){
+    function filterTopVideos(){
       // vm.contests.forEach(function(contest, index) {
       //   var ref = firebase.database().ref("contests/" + contest.id +"/videos").orderByChild("like").limitToFirst(2);
       //   ref.once("value").then(function(snapshot) {
@@ -85,7 +83,6 @@
           var videos = contestSnapshot.val().videos;
           var videosRef = contestSnapshot.child('videos').ref;
           videosRef.orderByChild("like").limitToLast(2).once("value", function(snapshot) {
-            console.log(snapshot.val());
             vm.topVideosPerContests.push(snapshot.val());
           });
         });

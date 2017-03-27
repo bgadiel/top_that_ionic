@@ -9,38 +9,39 @@ angular.module('topthat.contest')
 
       .state('app.contest', {
         abstract: true,
+        url: "/:contestID",
         templateUrl: 'app/contest/contestTabs.html',
+        // controller: function($stateParams){
+        //   var vm = this;
+        //   vm.id = $stateParams.contestID;
+        // },
+        controllerAs: 'vm',
+        controller: 'ContestController',
       })
 
       .state('app.contest.first', {
-        url: "/:contestID/first",
+        url: "/first",
         views: {
           'first-round-tab': {
-            templateUrl: 'app/contest/contest.html',
-            controller: 'ContestController',
-            controllerAs: 'vm',
+            templateUrl: 'app/contest/contestFirst.html',
           }
         }
       })
 
       .state('app.contest.semi', {
-        url: "/:contestID/semi",
+        url: "/semi",
         views: {
-          'semifinals-tab': {
-            templateUrl: 'app/contest/contest.html',
-            controller: 'ContestController',
-            controllerAs: 'vm',
+          'semi-finals-tab': {
+            templateUrl: 'app/contest/contestSemi.html',
           }
         }
       })
 
       .state('app.contest.finals', {
-        url: "/:contestID/finals",
+        url: "/finals",
         views: {
           'finals-tab': {
-            templateUrl: 'app/contest/contest.html',
-            controller: 'ContestController',
-            controllerAs: 'vm',
+            templateUrl: 'app/contest/contestFinals.html',
           }
         }
       });
