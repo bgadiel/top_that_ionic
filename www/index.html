@@ -7,9 +7,19 @@
 
 
     <!-- bower:css -->
+    <link rel="stylesheet" href="lib/angular-toastr/dist/angular-toastr.css" />
     <!-- endbower -->
 
     <!-- inject:css -->
+    <link rel="stylesheet" href="css/ionic.app.css">
+    <link rel="stylesheet" href="app/layout/side-menu.css">
+    <link rel="stylesheet" href="css/common/common.css">
+    <link rel="stylesheet" href="fonts/opensans_bold_macroman/stylesheet.css">
+    <link rel="stylesheet" href="fonts/opensans_regular_macroman/stylesheet.css">
+    <link rel="stylesheet" href="fonts/opensans_bold_macroman/specimen_files/grid_12-825-55-15.css">
+    <link rel="stylesheet" href="fonts/opensans_bold_macroman/specimen_files/specimen_stylesheet.css">
+    <link rel="stylesheet" href="fonts/opensans_regular_macroman/specimen_files/grid_12-825-55-15.css">
+    <link rel="stylesheet" href="fonts/opensans_regular_macroman/specimen_files/specimen_stylesheet.css">
     <!-- endinject -->
 
     <!-- ionic/angularjs js -->
@@ -19,6 +29,9 @@
     <script src="cordova.js"></script>
 
     <!-- bower:js -->
+    <script src="lib/firebase/firebase.js"></script>
+    <script src="lib/angularfire/dist/angularfire.js"></script>
+    <script src="lib/angular-toastr/dist/angular-toastr.tpls.js"></script>
     <!-- endbower -->
 
     <script>
@@ -34,6 +47,19 @@
     </script>
 
     <!-- inject:js -->
+    <script src="service-worker.js"></script>
+    <script src="app/app.js"></script>
+    <script src="app/auth/auth.controller.js"></script>
+    <script src="app/auth/auth.route.js"></script>
+    <script src="app/contest/contest.controller.js"></script>
+    <script src="app/contest/contest.route.js"></script>
+    <script src="app/core/core.module.js"></script>
+    <script src="app/core/firebaseData.service.js"></script>
+    <script src="app/home/home.controller.js"></script>
+    <script src="app/home/home.route.js"></script>
+    <script src="app/new.contest/new.contest.controller.js"></script>
+    <script src="app/new.contest/new.contest.route.js"></script>
+    <script src="app/blocks/tt-hide-tabs/tt-hide-tabs.directive.js"></script>
     <!-- endinject -->
 
   </head>
