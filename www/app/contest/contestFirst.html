@@ -1,4 +1,4 @@
-<ion-view>
+<ion-view >
   <!-- Second Phase -->
   <!--<ion-nav-buttons side="secondary">-->
     <!--<button class="button button-large ion-location" ng-click="vm.doSomething()">-->
@@ -37,14 +37,13 @@
         <h2 class="title">{{vm.contest.title}}</h2>
         <button class="button button-accent button-block">UPLOAD</button>
       </div>
-      <h1>First{{vm.contest.stage}}</h1>
       <div class="list">
         <div class="list-section">
           <!--<div class="list-section-header">-->
           <!--<i class="icon ion-android-time"></i>-->
           <!--<span class="label">Latest Video</span>-->
           <!--</div>-->
-          <div class="card" ng-repeat="video in vm.contest.videos">
+          <div class="card" ng-repeat="video in vm.videos | filterVideos: 'first'">
             <div class="item user-info-container">
               <img class="user-image" src="{{video.user_image}}" alt="">
               <span class="user-name-label">by </span>

@@ -3,24 +3,21 @@
  */
 
 angular.module('topthat.contest')
-  .config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
+  .config(function($stateProvider) {
 
     $stateProvider
 
       .state('app.contest', {
-        abstract: true,
         url: "/:contestID",
         templateUrl: 'app/contest/contestTabs.html',
-        // controller: function($stateParams){
-        //   var vm = this;
-        //   vm.id = $stateParams.contestID;
-        // },
         controllerAs: 'vm',
         controller: 'ContestController',
+        cache: false,
       })
 
       .state('app.contest.first', {
         url: "/first",
+        cache: false,
         views: {
           'first-round-tab': {
             templateUrl: 'app/contest/contestFirst.html',
@@ -30,6 +27,7 @@ angular.module('topthat.contest')
 
       .state('app.contest.semi', {
         url: "/semi",
+        cache: false,
         views: {
           'semi-finals-tab': {
             templateUrl: 'app/contest/contestSemi.html',
@@ -39,6 +37,7 @@ angular.module('topthat.contest')
 
       .state('app.contest.finals', {
         url: "/finals",
+        cache: false,
         views: {
           'finals-tab': {
             templateUrl: 'app/contest/contestFinals.html',

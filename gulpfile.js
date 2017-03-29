@@ -59,7 +59,7 @@ gulp.task('watch', function() {
   gulp.watch([
     paths.javascript,
     paths.css
-  ], ['index']);
+  ], ['wiredep'],['index']);
 });
 
 gulp.task('install', ['git-check'], function() {

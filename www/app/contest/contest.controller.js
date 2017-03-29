@@ -2,16 +2,24 @@
  * Created by gadi on 25/10/2016.
  */
 angular.module('topthat.contest', ['ionic'])
+  .filter('filterVideos', function () {
+    return function (videos, stage) {
+      return videos.filter(function (item) {
+        return item.stage === stage;
+      });
+    };
+  })
   .controller('ContestController', ContestController);
 
-ContestController.$inject = ['$scope', '$ionicModal', '$timeout', '$stateParams', '$rootScope', '$state',
-  'firebaseDataService', '$firebaseObject'];
+ContestController.$inject = ['$scope', '$ionicModal', '$firebaseArray', '$stateParams', '$rootScope', '$state',
+  'firebaseDataService', '$firebaseObject', 'toastr'];
 
 /* @ngInject */
-function ContestController($scope, $ionicModal, $timeout, $stateParams, $rootScope, $state,
-                           firebaseDataService, $firebaseObject) {
+function ContestController($scope, $ionicModal, $firebaseArray, $stateParams, $rootScope, $state,
+                           firebaseDataService, $firebaseObject, toastr) {
   var vm = this;
   var contestRef = firebaseDataService.contests.child($stateParams.contestID);
+  var videosRef = firebaseDataService.contests.child($stateParams.contestID).child('videos');
   vm.id = $stateParams.contestID;
 
   // contestRef.on('value', function(snapshot) {
@@ -21,6 +29,10 @@ function ContestController($scope, $ionicModal, $timeout, $stateParams, $rootSco
   $scope.$on('$ionicView.beforeEnter', function (event, viewData) {
     viewData.enableBack = true;
   });
+
+  $rootScope.$ionicGoBack = function (backCount) {
+    $state.go('app.home');
+  };
 
   // get the id
 
@@ -35,21 +47,45 @@ function ContestController($scope, $ionicModal, $timeout, $stateParams, $rootSco
     // listen for the $ionicView.enter event:
     //$scope.$on('$ionicView.enter', function(e) {
     //});
+    toastr.success('Contest Controller Activated');
+    vm.videos = $firebaseArray(videosRef);
+    vm.contest = $firebaseObject(contestRef); // synchronize the object with a three-way data binding
 
-    vm.contest = $firebaseObject(contestRef);      // synchronize the object with a three-way data binding
+    vm.videos.$loaded()
+      .then(function(x) {
+        toastr.success('Videos loaded!');
 
+        switch(vm.contest.stage) {
+          case 'first':
+            $state.go('app.contest.first');
+            break;
+
+          case 'semi':
+            $state.go('app.contest.semi');
+            break;
+
+          case 'finals':
+            $state.go('app.contest.finals');
+            break;
+
+          default:
+            $state.go('app.contest.first');
+            break;
+        }
+      })
+      .catch(function(error) {
+        toastr.error("Error:", error);
+      });
   }
 
-  $rootScope.$ionicGoBack = function (backCount) {
-    $state.go('app.home');
-  };
 
-  $ionicModal.fromTemplateUrl('app/contest/region.modal.html', {
-    scope: $scope,
-    animation: 'slide-in-up'
-  }).then(function (modal) {
-    vm.modal = modal;
-  });
+
+  // $ionicModal.fromTemplateUrl('app/contest/region.modal.html', {
+  //   scope: $scope,
+  //   animation: 'slide-in-up'
+  // }).then(function (modal) {
+  //   vm.modal = modal;
+  // });
 
   // vm.openModal = function() {
   //   vm.modal.show();
