@@ -12,11 +12,11 @@ angular.module('topthat.contest', ['ionic'])
   .controller('ContestController', ContestController);
 
 ContestController.$inject = ['$scope', '$ionicModal', '$firebaseArray', '$stateParams', '$rootScope', '$state',
-  'firebaseDataService', '$firebaseObject', 'toastr'];
+  'firebaseDataService', '$firebaseObject', 'toastr', '$cordovaCamera'];
 
 /* @ngInject */
 function ContestController($scope, $ionicModal, $firebaseArray, $stateParams, $rootScope, $state,
-                           firebaseDataService, $firebaseObject, toastr) {
+                           firebaseDataService, $firebaseObject, toastr, $cordovaCamera) {
   var vm = this;
   var contestRef = firebaseDataService.contests.child($stateParams.contestID);
   var videosRef = firebaseDataService.contests.child($stateParams.contestID).child('videos');
@@ -25,6 +25,8 @@ function ContestController($scope, $ionicModal, $firebaseArray, $stateParams, $r
   // contestRef.on('value', function(snapshot) {
   //   vm.contest = snapshot.val();
   // });
+
+  vm.takeImage = takeImage;
 
   $scope.$on('$ionicView.beforeEnter', function (event, viewData) {
     viewData.enableBack = true;
@@ -76,6 +78,26 @@ function ContestController($scope, $ionicModal, $firebaseArray, $stateParams, $r
       .catch(function(error) {
         toastr.error("Error:", error);
       });
+  }
+
+  function takeImage() {
+    var options = {
+      quality: 80,
+      destinationType: Camera.DestinationType.DATA_URL,
+      sourceType: Camera.PictureSourceType.CAMERA,
+      allowEdit: true,
+      encodingType: Camera.EncodingType.JPEG,
+      targetWidth: 250,
+      targetHeight: 250,
+      popoverOptions: CameraPopoverOptions,
+      saveToPhotoAlbum: false
+    };
+
+    $cordovaCamera.getPicture(options).then(function(imageData) {
+      $scope.srcImage = "data:image/jpeg;base64," + imageData;
+    }, function(err) {
+      // error
+    });
   }
 
 
