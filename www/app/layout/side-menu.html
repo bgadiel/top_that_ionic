@@ -85,23 +85,26 @@
     <ion-content has-bouncing="false" scroll="false" class="menu-outer">
       <div class="menu-top-options">
         <ion-list>
-          <ion-item ui-sref-active="active" menu-close ui-sref="app.home">
+          <ion-item ui-sref-active="active" menu-close ui-sref="app.home({catName: 'music'})">
             <h2 class="menu-text">Music Mania</h2>
           </ion-item>
-          <ion-item ui-sref-active="active" menu-close ui-sref="app.home">
+          <ion-item ui-sref-active="active" menu-close ui-sref="app.home({catName: 'stage'})">
             <h2 class="menu-text">Center Stage</h2>
           </ion-item>
-          <ion-item ui-sref-active="active" menu-close ui-sref="app.home">
+          <ion-item ui-sref-active="active" menu-close ui-sref="app.home({catName: 'dance'})">
             <h2 class="menu-text">Just Dance</h2>
           </ion-item>
-          <ion-item ui-sref-active="active" menu-close ui-sref="app.home">
+          <ion-item ui-sref-active="active" menu-close ui-sref="app.home({catName: 'sport'})">
             <h2 class="menu-text">Sportacular</h2>
           </ion-item>
-          <ion-item ui-sref-active="active" menu-close ui-sref="app.home">
+          <ion-item ui-sref-active="active" menu-close ui-sref="app.home({catName: 'fun'})">
             <h2 class="menu-text">For Fun</h2>
           </ion-item>
-          <ion-item ui-sref-active="active" menu-close ui-sref="app.home">
+          <ion-item ui-sref-active="active" menu-close ui-sref="app.home({catName: 'kids'})">
             <h2 class="menu-text">Kids’s Area</h2>
+          </ion-item>
+          <ion-item ui-sref-active="active" menu-close ui-sref="app.home({catName: ''})">
+            <h2 class="menu-text">All</h2>
           </ion-item>
         </ion-list>
       </div>

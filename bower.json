@@ -7,6 +7,8 @@
   "dependencies": {
     "angularfire": "^2.3.0",
     "angular-toastr": "^2.1.1",
-    "ionic-native": "^2.0.3"
+    "ng-cordova-oauth": "^0.3.0",
+    "ngstorage": "^0.3.11",
+    "ngCordova": "^0.1.27-alpha"
   }
 }

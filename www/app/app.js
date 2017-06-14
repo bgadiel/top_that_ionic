@@ -4,8 +4,8 @@
 (function () {
   'use strict';
 
-  angular.module('topthat', ['ionic','ionic.native', 'firebase', 'toastr', 'topthat.core',
-    'topthat.auth', 'topthat.home', 'topthat.contest', 'topthat.new.contest'])
+  angular.module('topthat', ['ionic','ngStorage', 'ngCordova', 'firebase', 'toastr', 'topthat.core',
+    'topthat.auth', 'topthat.home', 'topthat.contest', 'topthat.new.contest', 'ngCordovaOauth'])
 
     .run(function ($ionicPlatform) {
       $ionicPlatform.ready(function () {

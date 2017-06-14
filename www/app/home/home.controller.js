@@ -1,10 +1,10 @@
   angular.module('topthat.home', ['ionic'])
     .controller('HomeController', HomeController);
 
-  HomeController.$inject = ['$scope', '$ionicModal', '$timeout', '$firebaseArray', 'firebaseDataService', 'toastr'];
+  HomeController.$inject = ['$scope', '$ionicModal', '$timeout', '$firebaseArray', 'firebaseDataService', 'toastr', '$stateParams'];
 
   /* @ngInject */
-  function HomeController($scope, $ionicModal, $timeout, $firebaseArray, firebaseDataService, toastr) {
+  function HomeController($scope, $ionicModal, $timeout, $firebaseArray, firebaseDataService, toastr, $stateParams) {
     var vm = this;
     var contestsRef = firebaseDataService.contests;
     var usersRef = firebaseDataService.users;
@@ -29,13 +29,21 @@
       //$scope.$on('$ionicView.enter', function(e) {
       //});
 
-      // download the data into a local object
-      vm.contests = $firebaseArray(contestsRef.orderByChild("end_time"));      // synchronize the object with a three-way data binding
-      vm.users = $firebaseArray(usersRef);      // synchronize the object with a three-way data binding
+      if ($stateParams.catName){
+        toastr.success('contests downloaded by ' + $stateParams.catName);
+        vm.contests = $firebaseArray(contestsRef.orderByChild("category").equalTo($stateParams.catName));
+      }
+      else {
+        // download the data into a local object
+        toastr.success('all contests downloaded');
+        vm.contests = $firebaseArray(contestsRef.orderByChild("end_time")); // synchronize the object with a three-way data binding
+      }
+
+      vm.users = $firebaseArray(usersRef); // synchronize the object with a three-way data binding
 
       vm.contests.$loaded()
         .then(function(x) {
-          toastr.success('loaded!');
+          toastr.success('contests ready!');
           filterTopVideos();
         })
         .catch(function(error) {
@@ -95,6 +103,7 @@
         //console.log(vm.topVideosPerContests);
       //});
     }
+
   }
 
 

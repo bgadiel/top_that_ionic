@@ -93,6 +93,10 @@ function ContestController($scope, $ionicModal, $firebaseArray, $stateParams, $r
       saveToPhotoAlbum: false
     };
 
+    // $ionicPlatform.ready(function() {
+    //   $cordovaPlugin.someFunction().then(success, error);
+    //});
+
     $cordovaCamera.getPicture(options).then(function(imageData) {
       $scope.srcImage = "data:image/jpeg;base64," + imageData;
     }, function(err) {

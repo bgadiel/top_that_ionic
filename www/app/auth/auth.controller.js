@@ -4,34 +4,12 @@
 angular.module('topthat.auth', ['ionic'])
   .controller('AuthController', AuthController);
 
-AuthController.$inject = ['$state', '$firebaseAuth', 'toastr'];
+AuthController.$inject = ['$state', 'toastr', '$cordovaOauth', '$localStorage', '$firebaseAuth'];
 
 /* @ngInject */
-function AuthController($state, $firebaseAuth, toastr) {
+function AuthController($state, toastr, $cordovaOauth, $localStorage, $firebaseAuth) {
   var vm = this;
-  var authObj = $firebaseAuth();
-
-  // var provider = new firebase.auth.FacebookAuthProvider();
-  // //provider.addScope("https://www.googleapis.com/auth/plus.login");
-  // provider.setCustomParameters({
-  //   'display': 'popup'
-  // });
-
-  authObj.$onAuthStateChanged(function(firebaseUser) {
-    if (firebaseUser) {
-      toastr.success("Authentication success:", firebaseUser.uid);
-    } else {
-      toastr.error("Signed out");
-    }
-    // $scope.currUser = user;
-    // if (user) {
-    //   $scope.go('profile') //function to change states.
-    // } else {
-    //   // No user is signed in.
-    //   $scope.go("login") //login is where the app starts (login page)
-    // }
-  });
-
+  var auth = $firebaseAuth();
 
   vm.facebookSignIn = facebookSignIn;
 
@@ -42,20 +20,35 @@ function AuthController($state, $firebaseAuth, toastr) {
   function activate(){
   }
 
-  function facebookSignIn(){
+  function facebookSignIn() {
     // login with Facebook
-    authObj.$signInWithRedirect('facebook').then(function() {
-      // Never called because of page redirect
-      // Instead, use $onAuthStateChanged() to detect successful authentication
-    }).catch(function(error) {
-      toastr.info("Authentication Redirect failed:", error);
-      if (error.code === 'TRANSPORT_UNAVAILABLE') {
-        authObj.$signInWithPopup('facebook').then(function(authData) {
-        });
-      } else {
-        toastr.error("Authentication Redirect failed:", error);
-      }
-    });
+
+    // $cordovaOauth.facebook("242468262828616", ["email"])
+    //   .then(function (result) {
+    //     // results
+    //     toastr.success("Login success");
+    //     $localStorage.accessToken = result.access_token;
+    //     $state.go('app.home');
+    //   }, function (error) {
+    //     toastr.error(error);
+    //   });
+
+    // authObj.$signInWithRedirect('facebook')
+    //   .then(function() {
+    //     toastr.success("Redirect success");
+    //     $state.go('app.home');
+    //   }).catch(function(error) {
+    //   toastr.info("Authentication Redirect failed:", error);
+    //   if (error.code === 'TRANSPORT_UNAVAILABLE') {
+    //     authObj.$signInWithPopup('facebook')
+    //       .then(function (authData) {
+    //         toastr.success("Popup success");
+    //         $state.go('app.home');
+    //       });
+    //   } else {
+    //     toastr.error("Authentication Redirect failed:", error);
+    //   }
+    // });
     // firebase.auth().getRedirectResult().then(function(result) {
     //   if (result.credential) {
     //     // This gives you a Facebook Access Token. You can use it to access the Facebook API.
@@ -72,12 +65,13 @@ function AuthController($state, $firebaseAuth, toastr) {
     //   // The firebase.auth.AuthCredential type that was used.
     //   var credential = error.credential;
     // });
-    // authObj.$signInWithPopup("facebook").then(function(firebaseUser) {
-    //   toastr.success("Signed in as:", firebaseUser.uid);
-    //   $state.go('app.home');
-    // }).catch(function(error) {
-    //   toastr.error("Authentication failed:", error);
-    // });
+
+    auth.$signInWithPopup("facebook").then(function(firebaseUser) {
+      toastr.success("Signed in as:", firebaseUser.uid);
+      $state.go('app.home', {cat: ''});
+    }).catch(function(error) {
+      toastr.error("Authentication failed:", error);
+    });
 
     // Auth.$authWithOAuthRedirect(authMethod).then(function(authData) {
     // }).catch(function(error) {
