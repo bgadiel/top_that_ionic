@@ -29,12 +29,11 @@
       //$scope.$on('$ionicView.enter', function(e) {
       //});
 
-      if ($stateParams.catName){
+      if ($stateParams.catName){ //  when a category was selected download specific contests into a local object
         toastr.success('contests downloaded by ' + $stateParams.catName);
         vm.contests = $firebaseArray(contestsRef.orderByChild("category").equalTo($stateParams.catName));
       }
-      else {
-        // download the data into a local object
+      else { // download all contests the data into a local object        
         toastr.success('all contests downloaded');
         vm.contests = $firebaseArray(contestsRef.orderByChild("end_time")); // synchronize the object with a three-way data binding
       }

@@ -4,12 +4,12 @@
     <div class="categories">
       <h1>New Contest</h1>
       <ion-list>
-        <ion-radio ng-value="'1'">Music Mania</ion-radio>
-        <ion-radio ng-value="'2'">Center Stage</ion-radio>
-        <ion-radio ng-value="'3'">Just Dance</ion-radio>
-        <ion-radio ng-value="'4'">Sportacular</ion-radio>
-        <ion-radio ng-value="'5'">For Fun</ion-radio>
-        <ion-radio ng-value="'6'">Kids’ Area</ion-radio>
+        <ion-radio ng-model="vm.contestCategory" ng-value="'music'">Music Mania</ion-radio>
+        <ion-radio ng-model="vm.contestCategory" ng-value="'stage'">Center Stage</ion-radio>
+        <ion-radio ng-model="vm.contestCategory" ng-value="'dance'">Just Dance</ion-radio>
+        <ion-radio ng-model="vm.contestCategory" ng-value="'sport'">Sportacular</ion-radio>
+        <ion-radio ng-model="vm.contestCategory" ng-value="'fun'">For Fun</ion-radio>
+        <ion-radio ng-model="vm.contestCategory" ng-value="'kids'">Kids’ Area</ion-radio>
       </ion-list>
     </div>
     <div class="padding">

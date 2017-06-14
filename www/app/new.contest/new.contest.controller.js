@@ -28,9 +28,10 @@ function NewContestController($scope, $ionicModal, $timeout, $stateParams, $ioni
     //});
     vm.contestId = 111;
     vm.contestTitle = '';
-    vm.isTimer = false;
+    //vm.isTimer = false;
     vm.isPrivate = false;
     vm.contestCategory = '';
+    vm.contestType = '';
   }
 
   function newContestConfirm() {
@@ -38,7 +39,7 @@ function NewContestController($scope, $ionicModal, $timeout, $stateParams, $ioni
     var confirmPopup = $ionicPopup.show({
       title: 'Almost Done!', // String. The title of the popup
       cssClass: 'popup-vertical-buttons', // String, The custom CSS class name
-      subTitle: 'We will reveiew the detais and will start in the next 24 hours',
+      subTitle: 'We will reveiew the contest detais and it will start within the next 24 hours',
       templateUrl: 'app/new.contest/new.contest.modal.html',
       scope: $scope,
       buttons: [{ // Array[Object] (optional). Buttons to place in the popup footer.
@@ -68,6 +69,8 @@ function NewContestController($scope, $ionicModal, $timeout, $stateParams, $ioni
         }]
     });
 
+    createNewContest();
+
     confirmPopup.then(function (res) {
       if (res === 'contest') {
         $state.go('app.contest.first', { contestID: 222 });
@@ -79,5 +82,18 @@ function NewContestController($scope, $ionicModal, $timeout, $stateParams, $ioni
         $state.go('app.home');
       }
     });
+
+  }
+
+  function createNewContest(){
+    var newContest = {
+      category:vm.contestCategory,
+      end_time:'',
+      isActive: true,
+      stage: 'first',
+      start_time:'',
+      title: vm.contestTitle,
+      type: vm.contestType === 'private' ? 'private': 'tournament'
+    };
   }
 }
